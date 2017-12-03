@@ -1,0 +1,28 @@
+{
+  "name": "phosphor-webcomponent-build",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LukeSheard/phosphor-webcomponent.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LukeSheard/phosphor-webcomponent/issues"
+  },
+  "homepage": "https://github.com/LukeSheard/phosphor-webcomponent#readme",
+  "devDependencies": {
+    "lerna": "^2.5.1",
+    "typescript": "^2.6.2"
+  }
+}

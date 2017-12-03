@@ -1,0 +1,28 @@
+language: node_js
+
+node_js:
+  - '8'
+
+cache:
+  yarn: true
+  directories:
+  - node_modules
+
+addons:
+  firefox: latest
+  chrome: stable
+
+sudo: false
+
+before_install:
+  - export DISPLAY=:99.0;
+  - sh -e /etc/init.d/xvfb start;
+  - set -e;
+
+install:
+  - npm install
+
+jobs:
+  include:
+    - stage: Build
+      script: npm run build
