@@ -14,7 +14,7 @@
     "build:dev": "lerna exec -- node ../../scripts/build/build.js",
     "build:prod": "lerna exec -- NODE_ENV=production node ../../scripts/build/build.js",
     "examples": "webpack-dev-server --config ./examples/webpack.config.ts",
-    "prettier": "prettier packages/**/*"
+    "prettier": "prettier --list-different --write packages/**/*"
   },
   "repository": {
     "type": "git",
