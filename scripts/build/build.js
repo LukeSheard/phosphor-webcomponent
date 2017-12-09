@@ -1,3 +1,4 @@
+const { camelCase, capitalize } = require("lodash");
 const { mkdirSync } = require("fs");
 const { join } = require("path");
 
@@ -15,14 +16,18 @@ try {
 const createRollup = require("./rollup");
 
 const rollup = createRollup();
-const filename = `${pkgJSON.name}${process.env.NODE_ENV === "PRODUCTION" ? ".min" : ""}.js`;
+const name = `PhoshorWC.${capitalize(camelCase(pkgJSON.name.replace("@phosphorwc/", "")))}`;
+const filename = `${name}${process.env.NODE_ENV === "production" ? ".min" : ""}.js`;
 
 const bundle = ({ write }) => write({
   file: `dist/${filename}`,
   format: "umd",
   indent: true,
-  name: pkgJSON.name.replace("-", "."),
-  sourcemap: false
+  name,
+  sourcemap: false,
+  globals: {
+    "@phosphor/widgets": "phosphor"
+  }
 });
 
 rollup

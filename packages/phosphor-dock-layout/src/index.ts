@@ -26,7 +26,7 @@ export class DockLayoutElement extends HTMLElement {
   }
 
   resize() {
-    this._layout.fit()
+    this._layout.fit();
   }
 
   createdCallback() {
@@ -94,4 +94,4 @@ export class DockLayoutElement extends HTMLElement {
   }
 }
 
-export default customElements.define(DockLayoutElement.is, DockLayoutElement)
+export const HTMLDockLayoutElement = customElements.define(DockLayoutElement.is, DockLayoutElement)

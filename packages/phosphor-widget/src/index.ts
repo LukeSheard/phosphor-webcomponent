@@ -18,4 +18,4 @@ export class PhosphorWidget extends HTMLElement {
   }
 }
 
-export default customElements.define(PhosphorWidget.is, PhosphorWidget);
+export const HTMLWidgetElement = customElements.define(PhosphorWidget.is, PhosphorWidget);
