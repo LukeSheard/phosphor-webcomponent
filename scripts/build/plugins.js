@@ -2,6 +2,7 @@ const { join } = require("path");
 const commonjs = require("rollup-plugin-commonjs");
 const nodeResolve = require("rollup-plugin-node-resolve");
 const tsPlugin = require("rollup-plugin-typescript2");
+const uglify = require("rollup-plugin-uglify");
 
 module.exports = function(version, options) {
   const plugins = [
@@ -24,6 +25,27 @@ module.exports = function(version, options) {
       tsconfig: __dirname + "/../../tsconfig.json" // Have absolute path to fix windows build
     }),
   ];
+
+  if (process.env.NODE_ENV === "production") {
+    plugins.push(uglify({
+      compress: {
+        // compress options
+        booleans: true,
+        dead_code: true,
+        drop_debugger: true,
+        unused: true
+      },
+      ie8: false,
+      parse: {
+        // parse options
+        html5_comments: false,
+        shebang: false
+      },
+      sourceMap: false,
+      toplevel: false,
+      warnings: false
+    }))
+  }
 
   return plugins;
 };

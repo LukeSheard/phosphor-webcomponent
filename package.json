@@ -10,7 +10,9 @@
   ],
   "scripts": {
     "clean": "lerna exec -- rm -rf dist",
-    "build": "yarn clean && lerna exec -- node ../../scripts/build/build.js",
+    "build": "yarn clean && yarn build:dev && yarn build:prod",
+    "build:dev": "lerna exec -- node ../../scripts/build/build.js",
+    "build:prod": "lerna exec -- NODE_ENV=production node ../../scripts/build/build.js",
     "examples": "webpack-dev-server --config ./examples/webpack.config.ts",
     "prettier": "prettier packages/**/*"
   },
@@ -36,6 +38,7 @@
     "typescript": "^2.6.2"
   },
   "dependencies": {
-    "prettier": "^1.9.1"
+    "prettier": "^1.9.1",
+    "rollup-plugin-uglify": "^2.0.1"
   }
 }
