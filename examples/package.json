@@ -16,5 +16,8 @@
     "ts-node": "^3.3.0",
     "webpack": "^3.9.1",
     "webpack-dev-server": "^2.9.5"
+  },
+  "dependencies": {
+    "document-register-element": "^1.7.0"
   }
 }

@@ -1,11 +1,15 @@
 import { Configuration } from "webpack";
 
 const config: Configuration = {
+  context: __dirname,
   devtool: "inline-source-map",
   entry: [
+    "document-register-element",
     "@phosphor/widgets/style/index.css",
     "./style.css",
-    "../src",
+    "@phosphorwc/widget/src",
+    "@phosphorwc/dock-layout/src",
+    "@phosphorwc/tab-layout/src",
   ],
   module: {
     rules: [

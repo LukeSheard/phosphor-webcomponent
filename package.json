@@ -5,9 +5,12 @@
   "description": "",
   "main": "index.js",
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "examples"
   ],
   "scripts": {
+    "build": "lerna exec -- node ../../scripts/build/build.js",
+    "examples": "webpack-dev-server --config ./examples/webpack.config.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -24,5 +27,12 @@
   "devDependencies": {
     "lerna": "^2.5.1",
     "typescript": "^2.6.2"
+  },
+  "dependencies": {
+    "@types/node": "^8.0.54",
+    "rollup": "^0.52.0",
+    "rollup-plugin-commonjs": "^8.2.6",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-typescript2": "^0.8.4"
   }
 }

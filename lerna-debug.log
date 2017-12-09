@@ -1,20 +1,17 @@
-0 silly input [ 'rm', '-rf', 'node_modules' ]
+0 silly input [ 'node', '../../scripts/build/build.js' ]
 1 silly flags { _: [ 'exec' ],
 1 silly flags   'reject-cycles': false,
 1 silly flags   rejectCycles: false,
-1 silly flags   command: 'rm',
-1 silly flags   args: [ '-rf', 'node_modules' ] }
+1 silly flags   command: 'node',
+1 silly flags   args: [ '../../scripts/build/build.js' ] }
 2 verbose rootPath /Users/lukesheard/dev/work/phosphor-webcomponent
 3 info version 2.5.1
 4 silly existsSync /Users/lukesheard/dev/work/phosphor-webcomponent/VERSION
-5 error EPACKAGES Errored while collecting packages and package graph
-6 error TypeError: Cannot read property 'some' of undefined
-6 error     at Function.getPackages (/Users/lukesheard/.nvm/versions/node/v9.2.0/lib/node_modules/lerna/lib/PackageUtilities.js:102:43)
-6 error     at ExecCommand.runPreparations (/Users/lukesheard/.nvm/versions/node/v9.2.0/lib/node_modules/lerna/lib/Command.js:312:51)
-6 error     at /Users/lukesheard/.nvm/versions/node/v9.2.0/lib/node_modules/lerna/lib/Command.js:225:18
-6 error     at new Promise (<anonymous>)
-6 error     at ExecCommand.run (/Users/lukesheard/.nvm/versions/node/v9.2.0/lib/node_modules/lerna/lib/Command.js:212:14)
-6 error     at Object.handler (/Users/lukesheard/.nvm/versions/node/v9.2.0/lib/node_modules/lerna/lib/commands/ExecCommand.js:41:90)
-6 error     at Object.self.runCommand (/Users/lukesheard/.nvm/versions/node/v9.2.0/lib/node_modules/lerna/node_modules/yargs/lib/command.js:233:22)
-6 error     at Object.Yargs.self._parseArgs (/Users/lukesheard/.nvm/versions/node/v9.2.0/lib/node_modules/lerna/node_modules/yargs/yargs.js:990:30)
-6 error     at Object.Yargs.self.parse (/Users/lukesheard/.nvm/versions/node/v9.2.0/lib/node_modules/lerna/node_modules/yargs/yargs.js:532:23)
+5 silly initialize attempt
+6 silly initialize success
+7 silly execute attempt
+8 error exec Errored while executing 'node ../../scripts/build/build.js' in '@phosphorwc/dock-layout'
+9 error execute callback with error
+10 error Error: Command failed: node ../../scripts/build/build.js
+10 error     at Promise.all.then.arr (/Users/lukesheard/dev/work/phosphor-webcomponent/node_modules/execa/index.js:236:11)
+10 error     at <anonymous>

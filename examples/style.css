@@ -1,10 +1,3 @@
-/*-----------------------------------------------------------------------------
-| Copyright (c) 2014-2015, PhosphorJS Contributors
-|
-| Distributed under the terms of the BSD 3-Clause License.
-|
-| The full license is in the file LICENSE, distributed with this software.
-|----------------------------------------------------------------------------*/
 body {
   margin: 0;
   padding: 0;
@@ -14,49 +7,6 @@ body {
 .p-DockPanel-widget {
   border: 2px solid red;
 }
-
-#main {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  right: 10px;
-  bottom: 10px;
-}
-
-
-.CodeMirrorWidget {
-  border: 1px solid #C0C0C0;
-  min-width: 200px;
-  min-height: 200px;
-}
-
-
-.content {
-  border: 1px solid black;
-  min-width: 50px;
-  min-height: 50px;
-}
-
-
-.red {
-  background: #E74C3C;
-}
-
-
-.yellow {
-  background: #F1C40F;
-}
-
-
-.green {
-  background: #27AE60;
-}
-
-
-.blue {
-  background: #3498DB;
-}
-
 
 .p-DockTabPanel {
   padding-right: 2px;
