@@ -5,8 +5,7 @@
   "description": "",
   "main": "index.js",
   "workspaces": [
-    "packages/*",
-    "examples"
+    "packages/*"
   ],
   "scripts": {
     "clean": "lerna exec -- rm -rf dist",
