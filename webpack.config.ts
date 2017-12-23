@@ -1,33 +1,70 @@
+import * as ExtractTextPlugin from "extract-text-webpack-plugin";
 import * as fs from "fs";
 import * as path from "path";
 import * as webpack from "webpack";
 
-const packages = fs
-  .readdirSync(path.join(__dirname, "packages"))
+const LIBRARY_NAME = "PhosphorWC";
+const ROOT_DIR = path.resolve(__dirname);
+const PKG_DIR = process.cwd();
+const PKG_NAME = path.basename(PKG_DIR);
+
+const externals: any = fs
+  .readdirSync(path.join(ROOT_DIR, "packages"))
   .filter(packageName =>
-    fs.statSync(path.join(__dirname, "packages", packageName)).isDirectory()
-  );
-const entry = packages.reduce((entryObj, packageName) => ({
-    ...entryObj,
-    [packageName]: path.join(__dirname, "packages", packageName, "src/index.ts")
-}), {});
+    fs.statSync(path.join(ROOT_DIR, "packages", packageName)).isDirectory() && packageName !== PKG_NAME
+  ).reduce((externals, packageName) => {
+    const packageJSON = require(path.join(ROOT_DIR, "packages", packageName, "package.json"))
+    const npmPackageName = packageJSON.name;
+    return {
+      ...externals,
+      [npmPackageName]: {
+        amd: npmPackageName,
+        commonjs: npmPackageName,
+        commonjs2: npmPackageName,
+        root: `LIBRARY_NAME[${packageName}]`
+      }
+    };
+  }, {
+    "@phosphor/widgets": {
+      amd: "@phosphor/widgets",
+      commonjs: "@phosphor/widgets",
+      commonjs2: "@phosphor/widgets",
+      root: "phosphor"
+    }
+  });
 
 export default function(env: string) {
   const PROD = env === "production";
   const config: webpack.Configuration = {
-    entry,
+    context: PKG_DIR,
+    entry: {
+      [PKG_NAME]: path.join(PKG_DIR, "src", "index.ts"),
+    },
     output: {
-      path: __dirname,
-      filename: `packages/[name]/dist/[name]${PROD ? ".min" : ""}.js`
+      path: ROOT_DIR,
+      filename: `packages/${PKG_NAME}/dist/[name]${PROD ? ".min" : ""}.js`,
+      library: [ LIBRARY_NAME, "[name]" ],
+      libraryTarget: "umd"
     },
     module: {
       rules: [
         {
           test: /.tsx?$/,
           loader: "ts-loader"
+        },
+        {
+          test: /\.css$/,
+          use: ExtractTextPlugin.extract({
+            fallback: "style-loader",
+            use: "css-loader"
+          })
         }
       ]
-    }
+    },
+    plugins: [
+      new ExtractTextPlugin(`packages/${PKG_NAME}/dist/[name].css`),
+    ],
+    externals
   };
 
   return config;

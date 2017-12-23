@@ -1,9 +1,10 @@
 {
   "compilerOptions": {
-    "baseUrl": "./packages",
+    "baseUrl": "./",
     "paths": {
-      "@phosphorwc/*": ["./*"],
-      "@phosphorwc/widget": ["./phosphor-widget/src"]
+      "@phosphorwc/*": [
+        "packages/phosphowwc-*/src"
+      ]
     },
     "target": "es5",
     "module": "commonjs",

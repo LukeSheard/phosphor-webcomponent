@@ -1,14 +1,6 @@
 import { DockPanel, Widget } from "@phosphor/widgets";
-
-class Content extends Widget {
-  constructor(node: Element) {
-    super();
-    this.title.label = node.getAttribute("data-title") || "UNKNOWN";
-    this.node.appendChild(node);
-  }
-}
-
-type ObservedAttribute = 'data-spacing';
+import { PhosphorContentWidget } from "@phosphorwc/shared";
+import "./index.css";
 
 export class DockLayoutElement extends HTMLElement {
   
@@ -19,7 +11,7 @@ export class DockLayoutElement extends HTMLElement {
   private _layout: DockPanel;
   private _resizeListener: () => void;
 
-  static get observedAttributes(): ObservedAttribute[] {
+  static get observedAttributes(): string[] {
     return [
       "data-spacing"
     ];
@@ -34,7 +26,7 @@ export class DockLayoutElement extends HTMLElement {
     this._layout = new DockPanel({ spacing: parseFloat(this.getAttribute("data-spacing") || "5") });
     
     Array.prototype.slice.call(this.children).forEach((child: Element) => {
-      if (child.tagName !== "PHOSPHOR-WIDGET") {
+      if (child.tagName.toLowerCase() !== "phosphor-widget") {
         console.warn(`Removing ${child.tagName}[id=${child.id}] from phosphor layout because it is not a phosphor-widget`);
         child.remove();
       }
@@ -42,9 +34,9 @@ export class DockLayoutElement extends HTMLElement {
     const widgets = Array.prototype.slice.call(this.children);
     for(let i = 0, l = widgets.length; i < l; i += 1) {
       const child = widgets[i];
-      const content = new Content(child);
+      const content = new PhosphorContentWidget(child);
       this._layout.addWidget(content, {
-        mode: child.getAttribute("data-mode") || `split-${i % 2 ? "right" : "bottom"}`
+        mode: child.getAttribute("data-split-mode") || `split-${i % 2 ? "right" : "bottom"}`
       });
     }
   }
@@ -67,7 +59,7 @@ export class DockLayoutElement extends HTMLElement {
 
   appendChild(child: any) {
     if (this._layout) {
-      const content = new Content(child);
+      const content = new PhosphorContentWidget(child);
       this._layout.addWidget(content);
       return content.node;
     }
@@ -75,11 +67,16 @@ export class DockLayoutElement extends HTMLElement {
     return child;
   }
 
-  attributeChangedCallback(attr: ObservedAttribute, _: string, newValue: string) {
+  attributeChangedCallback(attr: string, _: string, newValue: string) {
     switch (attr) {
       case "data-spacing": {
         if (newValue && this._layout) {
-          this._layout.spacing = parseFloat(newValue)
+          try {
+            const spacing = parseFloat(newValue);
+            this._layout.spacing = spacing
+          } catch (e) {
+            console.warn(e);
+          }
         }
       }
     }

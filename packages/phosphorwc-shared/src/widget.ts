@@ -1,8 +1,8 @@
-export const REQUIRED_ATTRIBUTES = [
+const REQUIRED_ATTRIBUTES = [
   "data-title"
 ];
 
-export class PhosphorWidget extends HTMLElement {
+export class HTMLPhosphorWidgetElement extends HTMLElement {
   
   static get is() {
     return "phosphor-widget";
@@ -25,4 +25,4 @@ export class PhosphorWidget extends HTMLElement {
   }
 }
 
-export const HTMLWidgetElement = customElements.define(PhosphorWidget.is, PhosphorWidget);
+customElements.define(HTMLPhosphorWidgetElement.is, HTMLPhosphorWidgetElement);

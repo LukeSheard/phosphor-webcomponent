@@ -5,12 +5,13 @@
   "description": "",
   "main": "index.js",
   "workspaces": [
-    "packages/*",
-    "example"
+    "packages/*"
   ],
   "scripts": {
     "prebuild": "lerna exec -- rimraf dist",
-    "build": "webpack && webpack --env=production",
+    "build": "yarn build:dev && yarn build:prod",
+    "build:dev": "lerna exec -- webpack --config ../../webpack.config.ts",
+    "build:prod": "yarn build:dev --env=production",
     "example": "webpack-dev-server --config ./example/webpack.config.ts",
     "prettier": "prettier --list-different --write packages/**/*"
   },
@@ -26,10 +27,14 @@
   },
   "homepage": "https://github.com/LukeSheard/phosphor-webcomponent#readme",
   "devDependencies": {
+    "@types/extract-text-webpack-plugin": "^3.0.0",
     "@types/node": "^8.0.54",
     "@types/webpack": "^3.8.1",
+    "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^3.0.2",
     "lerna": "^2.5.1",
     "rimraf": "^2.6.2",
+    "style-loader": "^0.19.1",
     "ts-loader": "^3.2.0",
     "ts-node": "^3.3.0",
     "typescript": "^2.6.2",
