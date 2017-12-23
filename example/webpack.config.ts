@@ -4,12 +4,17 @@ const config: Configuration = {
   context: __dirname,
   devtool: "inline-source-map",
   entry: [
+    // node_modules
     "document-register-element",
     "@phosphor/widgets/style/index.css",
-    "./style.css",
+
+    // web components
     "@phosphorwc/widget/src",
     "@phosphorwc/dock-layout/src",
     "@phosphorwc/tab-layout/src",
+
+    // custom style
+    "./style.css",
   ],
   module: {
     rules: [
@@ -25,6 +30,9 @@ const config: Configuration = {
         test: /.css?$/
       }
     ]
+  },
+  devServer: {
+    contentBase: __dirname,
   },
   resolve: {
     extensions: [

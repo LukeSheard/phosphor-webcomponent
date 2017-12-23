@@ -16,6 +16,13 @@ export class PhosphorWidget extends HTMLElement {
       }
     })
   }
+
+  resize() {
+    console.log("Resize");
+    if(this.firstChild && (this.firstChild as any).resize) {
+      (this.firstChild as any).resize();
+    }
+  }
 }
 
 export const HTMLWidgetElement = customElements.define(PhosphorWidget.is, PhosphorWidget);

@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <title>Example Dock Layout</title>
+    <style>
+      body, phosphor-dock-layout, phosphor-tab-layout {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        display: block;
+      }
+
+      .p-DockPanel, .p-TabPanel {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        display: block;
+      }
+
+      .p-Widget > phosphor-widget,
+      phosphor-widget > phosphor-dock-layout,
+      phosphor-widget > phosphor-tab-layout {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <phosphor-tab-layout>
+      <phosphor-widget data-title="Tab 1">
+        <phosphor-tab-layout>
+            <phosphor-widget data-title="Widget 1">
+              Hello World
+            </phosphor-widget>
+            <phosphor-widget data-title="Widget 2" data-mode="split-right">
+                Hello World
+            </phosphor-widget>
+            <phosphor-widget data-title="Widget 3" data-mode="tab-before">
+                Hello World
+            </phosphor-widget>
+            <phosphor-widget data-title="Widget 4" data-mode="tab-after">
+                Hello World
+            </phosphor-widget>
+            <phosphor-widget data-title="Widget 5" data-mode="split-top">
+                Hello World
+            <phosphor-widget data-title="Widget 1">
+          </phosphor-tab-layout>
+        </phosphor-widget>
+      <phosphor-widget data-title="Tab 2">
+        Hello there
+      </phosphor-widget>
+    </phosphor-tab-layout>
+    <script src="/bundle.js"></script>
+  </body>
+</html>

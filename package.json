@@ -5,14 +5,13 @@
   "description": "",
   "main": "index.js",
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "example"
   ],
   "scripts": {
-    "clean": "lerna exec -- rm -rf dist",
-    "build": "yarn clean && yarn build:dev && yarn build:prod",
-    "build:dev": "lerna exec -- node ../../scripts/build/build.js",
-    "build:prod": "lerna exec -- NODE_ENV=production node ../../scripts/build/build.js",
-    "examples": "webpack-dev-server --config ./examples/webpack.config.ts",
+    "prebuild": "lerna exec -- rimraf dist",
+    "build": "webpack && webpack --env=production",
+    "example": "webpack-dev-server --config ./example/webpack.config.ts",
     "prettier": "prettier --list-different --write packages/**/*"
   },
   "repository": {
@@ -28,16 +27,15 @@
   "homepage": "https://github.com/LukeSheard/phosphor-webcomponent#readme",
   "devDependencies": {
     "@types/node": "^8.0.54",
+    "@types/webpack": "^3.8.1",
     "lerna": "^2.5.1",
-    "lodash": "^4.17.4",
-    "rollup": "^0.52.0",
-    "rollup-plugin-commonjs": "^8.2.6",
-    "rollup-plugin-node-resolve": "^3.0.0",
-    "rollup-plugin-typescript2": "^0.8.4",
-    "typescript": "^2.6.2"
+    "rimraf": "^2.6.2",
+    "ts-loader": "^3.2.0",
+    "ts-node": "^3.3.0",
+    "typescript": "^2.6.2",
+    "webpack": "^3.10.0"
   },
   "dependencies": {
-    "prettier": "^1.9.1",
-    "rollup-plugin-uglify": "^2.0.1"
+    "tslib": "^1.8.1"
   }
 }

@@ -29,7 +29,8 @@ export class DockLayoutElement extends HTMLElement {
     this._layout.fit();
   }
 
-  createdCallback() {
+  constructor() {
+    super();
     this._layout = new DockPanel({ spacing: parseFloat(this.getAttribute("data-spacing") || "5") });
     
     Array.prototype.slice.call(this.children).forEach((child: Element) => {
@@ -39,7 +40,6 @@ export class DockLayoutElement extends HTMLElement {
       }
     });
     const widgets = Array.prototype.slice.call(this.children);
-    console.log(widgets);
     for(let i = 0, l = widgets.length; i < l; i += 1) {
       const child = widgets[i];
       const content = new Content(child);
@@ -50,13 +50,19 @@ export class DockLayoutElement extends HTMLElement {
   }
 
   connectedCallback() {
-    Widget.attach(this._layout, this);
-    this._resizeListener = () => this.resize();
-    window.addEventListener("resize", this._resizeListener);
+    if (!this._layout.isAttached) {
+      Widget.attach(this._layout, this);
+      this._resizeListener = () => this.resize();
+      window.addEventListener("resize", this._resizeListener);
+    }
+    this._layout.fit();
+    this._layout.update();
   }
-
+  
   disconnectedCallback() {
-    window.removeEventListener("resize", this._resizeListener);
+    if (this._layout.isAttached) {
+      window.removeEventListener("resize", this._resizeListener);
+    }
   }
 
   appendChild(child: any) {

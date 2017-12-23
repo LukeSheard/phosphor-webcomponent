@@ -2,11 +2,11 @@
   "compilerOptions": {
     "baseUrl": "./packages",
     "paths": {
-      "@phosphorwc/*": ["./*/src"]
+      "@phosphorwc/*": ["./*"],
+      "@phosphorwc/widget": ["./phosphor-widget/src"]
     },
     "target": "es5",
     "module": "commonjs",
-    "checkJs": true,
     "removeComments": true,
     "importHelpers": true,
     "strict": true,
@@ -16,7 +16,8 @@
     "noFallthroughCasesInSwitch": true,
     "moduleResolution": "node",
     "experimentalDecorators": true,
-    "emitDecoratorMetadata": true
+    "emitDecoratorMetadata": true,
+    "sourceMap": true
   },
   "include": [
     "./packages",
