@@ -5,17 +5,21 @@ const config: Configuration = {
   devtool: "inline-source-map",
   entry: [
     // node_modules
-    "document-register-element",
+    // "document-register-element",
     "@phosphor/widgets/style/index.css",
 
     // web components
-    "@phosphorwc/widget/src",
-    "@phosphorwc/dock-layout/src",
-    "@phosphorwc/tab-layout/src",
+    "../packages/shared/src",
+    "../packages/dock-layout/src",
+    "../packages/tab-layout/src",
 
     // custom style
     "./style.css",
   ],
+  output: {
+    path: __dirname,
+    filename: "bundle.js"
+  },
   module: {
     rules: [
       {
@@ -35,10 +39,6 @@ const config: Configuration = {
     contentBase: __dirname,
   },
   resolve: {
-    modules: [
-      "node_modules",
-      "packages"
-    ],
     extensions: [
       ".ts",
       ".js"
