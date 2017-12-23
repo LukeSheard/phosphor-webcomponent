@@ -56,15 +56,28 @@ export default function(env: string) {
           test: /\.css$/,
           use: ExtractTextPlugin.extract({
             fallback: "style-loader",
-            use: "css-loader"
+            use: [
+              {
+                loader: "css-loader",
+                options: {
+                  minimize: PROD
+                }
+              }
+            ]
           })
         }
       ]
     },
     plugins: [
-      new ExtractTextPlugin(`packages/${PKG_NAME}/dist/[name].css`),
+      new ExtractTextPlugin(`packages/${PKG_NAME}/dist/[name]${PROD ? ".min" : ""}.css`),
     ],
-    externals
+    externals,
+    resolve: {
+      extensions: [
+        ".js",
+        ".ts"
+      ]
+    }
   };
 
   return config;

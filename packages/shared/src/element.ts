@@ -4,7 +4,7 @@ import { HTMLPhosphorWidgetElement } from "./widget";
 
 export type PhosphorLayoutPanel = TabPanel | DockPanel;
 
-export class HTMLPhosphorElement<BasePanel extends PhosphorLayoutPanel> extends HTMLElement {
+export abstract class HTMLPhosphorElement<BasePanel extends PhosphorLayoutPanel> extends HTMLElement {
   protected _layout: BasePanel;
   private _resizeListener: () => void;
 
@@ -12,18 +12,12 @@ export class HTMLPhosphorElement<BasePanel extends PhosphorLayoutPanel> extends 
     this._layout.fit();
   }
 
-  protected _initLayout() {
-    throw Error("Must be implemented in subclas");
-  }
-
-  protected addWidget(child: HTMLPhosphorWidgetElement): PhosphorContentWidget {
-    throw Error("Must be implemented in subclass");
-  }
+  protected abstract _initLayout(): BasePanel;
+  protected abstract addWidget(child: HTMLPhosphorWidgetElement): PhosphorContentWidget;
 
   constructor() {
     super();
-    this._initLayout();
-    
+    this._layout = this._initLayout();
     this._getChildWidgets().forEach(child => this.addWidget(child));
   }
 

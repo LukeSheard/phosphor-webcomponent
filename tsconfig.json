@@ -2,8 +2,14 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "@phosphorwc/*": [
-        "packages/phosphowwc-*/src"
+      "@phosphorwc/dock-layout": [
+        "packages/dock-layout/src"
+      ],
+      "@phosphorwc/shared": [
+        "packages/shared/src"
+      ],
+      "@phosphorwc/tab-layout": [
+        "packages/tab-layout/src"
       ]
     },
     "target": "es5",
@@ -21,7 +27,6 @@
     "sourceMap": true
   },
   "include": [
-    "./packages",
-    "./scripts"
+    "packages/"
   ]
 }

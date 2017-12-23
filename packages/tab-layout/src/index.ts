@@ -1,14 +1,14 @@
 import { TabPanel } from "@phosphor/widgets";
 import { PhosphorContentWidget, HTMLPhosphorWidgetElement, HTMLPhosphorElement } from "@phosphorwc/shared";
 
-export class HTMLPhosphorTabElement extends HTMLPhosphorElement {
+export class HTMLPhosphorTabElement extends HTMLPhosphorElement<TabPanel> {
   
   static get is() {
     return "phosphor-tab-layout";
   }
 
   protected _initLayout() {
-    this._layout = new TabPanel();
+    return new TabPanel();
   }
 
   protected addWidget(child: HTMLPhosphorWidgetElement): PhosphorContentWidget {

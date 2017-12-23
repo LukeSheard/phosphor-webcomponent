@@ -35,6 +35,10 @@ const config: Configuration = {
     contentBase: __dirname,
   },
   resolve: {
+    modules: [
+      "node_modules",
+      "packages"
+    ],
     extensions: [
       ".ts",
       ".js"
