@@ -25,7 +25,9 @@ install:
 
 jobs:
   include:
-    - stage: Test
-      script: yarn build
-    - stage: Test
+    - stage: Build / Test
       script: yarn prettier
+    - stage: Build / Test
+      script: yarn build
+    - stage: Example
+      script: yarn example:build
