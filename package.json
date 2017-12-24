@@ -14,7 +14,9 @@
     "build:dev": "webpack",
     "build:prod": "yarn build:dev --env=production",
     "postbuild": "lerna exec --scope=!phosphor-layout-examples -- cp ../../README.md README.md",
-    "example": "webpack-dev-server --config ./example/webpack.config.ts",
+    "example": "npm-run-all --print-label example:package example:example",
+    "example:package": "npm run build:dev --watch",
+    "example:example": "webpack-dev-server --config ./example/webpack.config.ts",
     "example:build": "webpack --config ./example/webpack.config.ts",
     "prepublishOnly": "yarn build",
     "prettier": "prettier --list-different --write packages/*/src/**/*"
@@ -39,6 +41,7 @@
     "extract-text-webpack-plugin": "^3.0.2",
     "lerna": "^2.5.1",
     "node-sass": "^4.7.2",
+    "npm-run-all": "^4.1.2",
     "prettier": "^1.9.2",
     "rimraf": "^2.6.2",
     "sass-loader": "^6.0.6",
