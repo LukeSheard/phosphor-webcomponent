@@ -1,5 +1,5 @@
 {
-  "name": "phosphor-layout-dock",
+  "name": "phosphor-dock-layout",
   "version": "1.0.0",
   "description": "",
   "main": "dist/dock-layout.js",

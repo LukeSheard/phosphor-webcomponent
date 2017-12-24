@@ -12,7 +12,7 @@ export class HTMLPhosphorWidgetElement extends HTMLElement {
   public widget: Widget | null;
 
   static get observedAttributes(): string[] {
-    return ["data-title"];
+    return ["data-title", "data-closable"];
   }
 
   public attributeChangedCallback(
@@ -23,6 +23,16 @@ export class HTMLPhosphorWidgetElement extends HTMLElement {
     switch (attributeName) {
       case "data-title": {
         this.title = value;
+        if (this.widget) {
+          this.widget.title.label = this.title;
+        }
+        break;
+      }
+      case "data-closable": {
+        if (this.widget && (value === "true" || value === "false")) {
+          this.widget.title.closable = (value === "true");
+        }
+        break;
       }
     }
   }

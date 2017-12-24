@@ -1,5 +1,5 @@
 {
-  "name": "phosphor-layout-tab",
+  "name": "phosphor-tab-layout",
   "version": "1.0.0",
   "description": "",
   "main": "dist/tab-layout.js",

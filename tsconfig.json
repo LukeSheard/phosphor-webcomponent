@@ -2,13 +2,13 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "phosphor-layout-dock": [
+      "phosphor-dock-layout": [
         "packages/dock-layout/src"
       ],
       "phosphor-layout-shared": [
         "packages/shared/src"
       ],
-      "phosphor-layout-tab": [
+      "phosphor-tab-layout": [
         "packages/tab-layout/src"
       ]
     },

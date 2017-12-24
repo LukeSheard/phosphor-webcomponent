@@ -12,12 +12,12 @@ const config: Configuration = {
     // web components
     "phosphor-layout-shared/dist/shared.css",
 
-    "phosphor-layout-dock/src", // hack to access typescript in dev
+    "phosphor-dock-layout/src", // hack to access typescript in dev
     
-    "phosphor-layout-tab/src", // hack to access typescript in dev
+    "phosphor-tab-layout/src", // hack to access typescript in dev
   ],
   output: {
-    path: __dirname,
+    path: join(__dirname, "public"),
     filename: "[name].js"
   },
   module: {
@@ -44,7 +44,7 @@ const config: Configuration = {
     ]
   },
   devServer: {
-    contentBase: join(__dirname, "src")
+    contentBase: join(__dirname, "public")
   },
   plugins: [
     new ExtractTextPlugin(`[name].css`),

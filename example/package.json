@@ -19,8 +19,8 @@
   },
   "dependencies": {
     "document-register-element": "^1.7.0",
-    "phosphor-layout-dock": "^1.0.0",
+    "phosphor-dock-layout": "^1.0.0",
     "phosphor-layout-shared": "^1.0.0",
-    "phosphor-layout-tab": "^1.0.0"
+    "phosphor-tab-layout": "^1.0.0"
   }
 }

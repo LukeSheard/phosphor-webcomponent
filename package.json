@@ -14,6 +14,7 @@
     "build:dev": "webpack",
     "build:prod": "yarn build:dev --env=production",
     "example": "webpack-dev-server --config ./example/webpack.config.ts",
+    "example:build": "webpack --config ./example/webpack.config.ts",
     "prettier": "prettier --list-different --write packages/*/src/**/*"
   },
   "repository": {
