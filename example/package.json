@@ -1,5 +1,5 @@
 {
-  "name": "@phosphorwc/examples",
+  "name": "phosphor-layout-examples",
   "private": true,
   "version": "1.0.0",
   "description": "",
@@ -18,6 +18,9 @@
     "webpack-dev-server": "^2.9.5"
   },
   "dependencies": {
-    "document-register-element": "^1.7.0"
+    "document-register-element": "^1.7.0",
+    "phosphor-layout-dock": "^1.0.0",
+    "phosphor-layout-shared": "^1.0.0",
+    "phosphor-layout-tab": "^1.0.0"
   }
 }

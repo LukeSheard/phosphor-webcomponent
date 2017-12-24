@@ -1,24 +1,24 @@
+import * as ExtractTextPlugin from "extract-text-webpack-plugin";
+import { join } from "path";
 import { Configuration } from "webpack";
 
 const config: Configuration = {
   context: __dirname,
-  devtool: "inline-source-map",
+  devtool: "source-map",
   entry: [
     // node_modules
-    // "document-register-element",
-    "@phosphor/widgets/style/index.css",
+    "document-register-element",
 
     // web components
-    "../packages/shared/src",
-    "../packages/dock-layout/src",
-    "../packages/tab-layout/src",
+    "phosphor-layout-shared/dist/shared.css",
 
-    // custom style
-    "./style.css",
+    "phosphor-layout-dock/src", // hack to access typescript in dev
+    
+    "phosphor-layout-tab/src", // hack to access typescript in dev
   ],
   output: {
     path: __dirname,
-    filename: "bundle.js"
+    filename: "[name].js"
   },
   module: {
     rules: [
@@ -27,21 +27,34 @@ const config: Configuration = {
         test: /.tsx?$/
       },
       {
-        use: [
-          "style-loader",
-          "css-loader"
-        ],
-        test: /.css?$/
+        test: /\.(scss|css)$/,
+        use: ExtractTextPlugin.extract({
+          fallback: "style-loader",
+          use: [
+            {
+              loader: "css-loader",
+              options: {
+                sourceMap: true
+              }
+            },
+            "sass-loader"
+          ]
+        })
       }
     ]
   },
   devServer: {
-    contentBase: __dirname,
+    contentBase: join(__dirname, "src")
   },
+  plugins: [
+    new ExtractTextPlugin(`[name].css`),
+  ],
   resolve: {
     extensions: [
       ".ts",
-      ".js"
+      ".js",
+      ".css",
+      ".scss"
     ]
   }
 }

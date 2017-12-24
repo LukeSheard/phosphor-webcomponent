@@ -1,8 +1,8 @@
 {
-  "name": "@phosphorwc/tab-layout",
+  "name": "phosphor-layout-tab",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/tab-layout.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,6 +10,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "phosphor-layout-shared": "^1.0.0",
     "@phosphor/widgets": "^1.5.0"
   }
 }

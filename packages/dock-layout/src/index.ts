@@ -1,17 +1,17 @@
-import { DockPanel } from "@phosphor/widgets";
-import { PhosphorContentWidget, HTMLPhosphorWidgetElement, HTMLPhosphorElement } from "@phosphorwc/shared";
-import "./index.css";
+import { DockPanel, DockLayout } from "@phosphor/widgets";
+import {
+  PhosphorContentWidget,
+  HTMLPhosphorWidgetElement,
+  HTMLPhosphorElement
+} from "phosphor-layout-shared";
 
 export class HTMLPhosphorDockElement extends HTMLPhosphorElement<DockPanel> {
-  
   static get is() {
     return "phosphor-dock-layout";
   }
 
   static get observedAttributes(): string[] {
-    return [
-      "data-spacing"
-    ];
+    return ["data-spacing"];
   }
 
   protected _initLayout() {
@@ -20,7 +20,11 @@ export class HTMLPhosphorDockElement extends HTMLPhosphorElement<DockPanel> {
 
   protected addWidget(child: HTMLPhosphorWidgetElement): PhosphorContentWidget {
     const widget = new PhosphorContentWidget(child);
-    this._layout.addWidget(widget);
+    const mode = (child.getAttribute("data-mode") ||
+      "split-right") as DockLayout.InsertMode;
+    this._layout.addWidget(widget, {
+      mode
+    });
     return widget;
   }
 
@@ -30,7 +34,7 @@ export class HTMLPhosphorDockElement extends HTMLPhosphorElement<DockPanel> {
         if (newValue && this._layout) {
           try {
             const spacing = parseFloat(newValue);
-            this._layout.spacing = spacing
+            this._layout.spacing = spacing;
           } catch (e) {
             console.warn(e);
           }
@@ -54,4 +58,4 @@ export class HTMLPhosphorDockElement extends HTMLPhosphorElement<DockPanel> {
   }
 }
 
-customElements.define(HTMLPhosphorDockElement.is, HTMLPhosphorDockElement)
+customElements.define(HTMLPhosphorDockElement.is, HTMLPhosphorDockElement);

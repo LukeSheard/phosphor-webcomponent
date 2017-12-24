@@ -5,14 +5,13 @@ import * as webpack from "webpack";
 
 const LIBRARY_NAME = "PhosphorWC";
 const ROOT_DIR = path.resolve(__dirname);
-const PKG_DIR = process.cwd();
-const PKG_NAME = path.basename(PKG_DIR);
-
-const externals: any = fs
+const PACKAGE_FOLDERS = fs
   .readdirSync(path.join(ROOT_DIR, "packages"))
   .filter(packageName =>
-    fs.statSync(path.join(ROOT_DIR, "packages", packageName)).isDirectory() && packageName !== PKG_NAME
-  ).reduce((externals, packageName) => {
+    fs.statSync(path.join(ROOT_DIR, "packages", packageName)).isDirectory()
+  );
+
+const externals: any = PACKAGE_FOLDERS.reduce((externals, packageName) => {
     const packageJSON = require(path.join(ROOT_DIR, "packages", packageName, "package.json"))
     const npmPackageName = packageJSON.name;
     return {
@@ -33,16 +32,19 @@ const externals: any = fs
     }
   });
 
+const entry = PACKAGE_FOLDERS.reduce((entries, packageName) => ({
+  ...entries, 
+  [packageName]: `./packages/${packageName}/src/index.ts`
+}), {});
+
 export default function(env: string) {
   const PROD = env === "production";
   const config: webpack.Configuration = {
-    context: PKG_DIR,
-    entry: {
-      [PKG_NAME]: path.join(PKG_DIR, "src", "index.ts"),
-    },
+    context: __dirname,
+    devtool: PROD ? false : "source-map",
+    entry,
     output: {
-      path: ROOT_DIR,
-      filename: `packages/${PKG_NAME}/dist/[name]${PROD ? ".min" : ""}.js`,
+      filename: `packages/[name]/dist/[name]${PROD ? ".min" : ""}.js`,
       library: [ LIBRARY_NAME, "[name]" ],
       libraryTarget: "umd"
     },
@@ -53,29 +55,32 @@ export default function(env: string) {
           loader: "ts-loader"
         },
         {
-          test: /\.css$/,
+          test: /\.(scss|css)$/,
           use: ExtractTextPlugin.extract({
             fallback: "style-loader",
             use: [
               {
                 loader: "css-loader",
                 options: {
-                  minimize: PROD
+                  minimize: PROD,
+                  sourceMap: true
                 }
-              }
+              },
+              "sass-loader"
             ]
           })
         }
       ]
     },
     plugins: [
-      new ExtractTextPlugin(`packages/${PKG_NAME}/dist/[name]${PROD ? ".min" : ""}.css`),
+      new ExtractTextPlugin(`packages/[name]/dist/[name]${PROD ? ".min" : ""}.css`),
     ],
     externals,
     resolve: {
       extensions: [
         ".js",
-        ".ts"
+        ".ts",
+        ".scss"
       ]
     }
   };

@@ -1,3 +1,4 @@
-export { HTMLPhosphorElement } from "./element";
-export { PhosphorContentWidget } from "./content-widget";
-export { HTMLPhosphorWidgetElement} from "./widget";
+import "./style/index.scss";
+export { HTMLPhosphorElement } from "./components/base-element";
+export { PhosphorContentWidget } from "./components/content-widget";
+export { HTMLPhosphorWidgetElement } from "./components/widget";

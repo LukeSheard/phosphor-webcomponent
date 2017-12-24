@@ -1,0 +1,150 @@
+.p-TabBar {
+  display: flex;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  &[data-orientation="horizontal"] {
+    flex-direction: row;
+  }
+
+  &[data-orientation="vertical"] {
+    flex-direction: column;
+  }
+}
+
+.p-TabBar-content {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex: 1 1 auto;
+  list-style-type: none;
+}
+
+.p-TabBar {
+  &[data-orientation="horizontal"] > .p-TabBar-content {
+    flex-direction: row;
+  }
+
+  &[data-orientation="vertical"] > .p-TabBar-content {
+    flex-direction: column;
+  }
+}
+
+.p-TabBar-tab {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.p-TabBar-tabIcon,
+.p-TabBar-tabCloseIcon {
+  flex: 0 0 auto;
+}
+
+.p-TabBar-tabLabel {
+  flex: 1 1 auto;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.p-TabBar-tab.p-mod-hidden {
+  display: none !important;
+}
+
+.p-TabBar.p-mod-dragging {
+  .p-TabBar-tab {
+    position: relative;
+  }
+
+  &[data-orientation="horizontal"] .p-TabBar-tab {
+    left: 0;
+    transition: left 150ms ease;
+  }
+
+  &[data-orientation="vertical"] .p-TabBar-tab {
+    top: 0;
+    transition: top 150ms ease;
+  }
+
+  .p-TabBar-tab.p-mod-dragging {
+    transition: none;
+  }
+}
+
+.p-TabBar {
+  min-height: 30px;
+  max-height: 30px;
+
+  .p-mod-closable {
+    .p-TabBar-tabCloseIcon {
+      margin-left: 4px;
+      line-height: 28px;
+
+      &:before {
+        content: "\f00d";
+        font-family: FontAwesome;
+        font-size: 14px;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.p-TabBar-tab {
+  flex: 0 1 125px;
+  min-height: 25px;
+  max-height: 25px;
+  min-width: 35px;
+  border: 1px solid $tabbar-tab-border;
+  border-bottom: none;
+  padding: 0px 10px;
+  background: $tabbar-tab-background;
+  font-size: 12px;
+  cursor: pointer;
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:hover {
+    background: $tabbar-tab-hover-background;
+  }
+
+  &.p-mod-current {
+    min-height: 27px;
+    max-height: 27px;
+    background: $tabbar-tab-current-background;
+
+    &:hover {
+      background: $tabbar-tab-current-hover-background;
+    }
+  }
+
+  .p-mod-drag-image {
+    min-height: 28px;
+    max-height: 28px;
+    min-width: 125px;
+    border: none;
+    transform: translateX(-40%) translateY(-58%);
+  }
+
+  .p-TabBar-tabLabel {
+    line-height: 26px;
+  }
+}
+
+.p-TabBar-tabIcon,
+.p-TabBar-tabText {
+  line-height: 20px;
+}
+
+.p-TabBar-content {
+  min-width: 0;
+  align-items: flex-end;
+}

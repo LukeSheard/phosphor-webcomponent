@@ -2,13 +2,13 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "@phosphorwc/dock-layout": [
+      "phosphor-layout-dock": [
         "packages/dock-layout/src"
       ],
-      "@phosphorwc/shared": [
+      "phosphor-layout-shared": [
         "packages/shared/src"
       ],
-      "@phosphorwc/tab-layout": [
+      "phosphor-layout-tab": [
         "packages/tab-layout/src"
       ]
     },
@@ -27,6 +27,7 @@
     "sourceMap": true
   },
   "include": [
+    "example/",
     "packages/"
   ]
 }

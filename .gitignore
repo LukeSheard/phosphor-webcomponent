@@ -3,3 +3,5 @@ package-lock.json
 .rpt2_cache_*
 dist
 *.log
+yarn.lock
+package-lock.json
