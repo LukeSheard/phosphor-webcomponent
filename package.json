@@ -13,8 +13,10 @@
     "build": "yarn build:dev && yarn build:prod",
     "build:dev": "webpack",
     "build:prod": "yarn build:dev --env=production",
+    "postbuild": "lerna exec --scope=!phosphor-layout-examples -- cp ../../README.md README.md",
     "example": "webpack-dev-server --config ./example/webpack.config.ts",
     "example:build": "webpack --config ./example/webpack.config.ts",
+    "prepublishOnly": "yarn build",
     "prettier": "prettier --list-different --write packages/*/src/**/*"
   },
   "repository": {
