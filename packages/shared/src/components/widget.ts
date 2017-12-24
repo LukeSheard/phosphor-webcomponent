@@ -1,7 +1,25 @@
 import * as debug from "debug";
 import { Widget } from "@phosphor/widgets";
+import { HTMLPhosphorElement } from "./base-element";
 
 const log = debug("phosphor:layout:widget");
+
+const PHOSPHOR_TAGS = [
+  "phosphor-dock-layout",
+  "phosphor-tab-layout"
+]
+
+function resize(children: HTMLCollection) {
+  for (let i = 0, l = children.length; i < l; i += 1) {
+    const child: Element = children[i];
+    if (PHOSPHOR_TAGS.indexOf(child.tagName.toLowerCase()) > -1) {
+      log(`Resizing ${child}`);
+      (child as HTMLPhosphorElement<any>).resize()
+    } else {
+      resize(child.children);
+    }
+  }
+}
 
 export class HTMLPhosphorWidgetElement extends HTMLElement {
   static get is() {
@@ -15,11 +33,7 @@ export class HTMLPhosphorWidgetElement extends HTMLElement {
     return ["data-title", "data-closable"];
   }
 
-  public attributeChangedCallback(
-    attributeName: string,
-    _oldValue: string,
-    value: string
-  ): void {
+  public attributeChangedCallback(attributeName: string, _oldValue: string, value: string): void {
     switch (attributeName) {
       case "data-title": {
         this.title = value;
@@ -30,7 +44,7 @@ export class HTMLPhosphorWidgetElement extends HTMLElement {
       }
       case "data-closable": {
         if (this.widget && (value === "true" || value === "false")) {
-          this.widget.title.closable = (value === "true");
+          this.widget.title.closable = value === "true";
         }
         break;
       }
@@ -45,9 +59,7 @@ export class HTMLPhosphorWidgetElement extends HTMLElement {
 
   resize() {
     log(`${this.title}: Resize`);
-    if (this.firstChild && (this.firstChild as any).resize) {
-      (this.firstChild as any).resize();
-    }
+    resize(this.children);
   }
 }
 

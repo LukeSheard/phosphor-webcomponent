@@ -3,27 +3,73 @@
     <title>Example Dock Layout</title>
     <style>
       body {
+        position: relative;
         margin: 0;
         padding: 0;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-content: stretch;
+        align-items: stretch;
       }
     </style>
     <link rel="stylesheet" href="main.css">
   </head>
   <body>
+    <h1>
+      Hello There...
+    </h1>
     <phosphor-tab-layout>
       <phosphor-widget data-title="Tab 1">
         <phosphor-dock-layout>
-            <phosphor-widget data-title="Widget 2" data-mode="split-right">
+            <phosphor-widget data-title="Widget 2">
                 Hello World
             </phosphor-widget>
-            <phosphor-widget data-title="Widget 3" data-mode="tab-before" data-closable="true">
+            <phosphor-widget data-title="Widget 2" data-mode="split-bottom">
+                Hello World
+            </phosphor-widget>
+            <phosphor-widget data-title="Widget 3" data-mode="split-right" data-closable="true">
                 Hello World
             </phosphor-widget>
           </phosphor-dock-layout>
         </phosphor-widget>
-      <phosphor-widget data-title="Tab 2">
-        Hello there
+      <phosphor-widget data-title="Tab 2" data-closable="true">
+        <div>
+            Here's a second tab in the layout, the dock layout will automatically fill it's parent when it's presented.
+        </div>
+        <phosphor-dock-layout>
+          <phosphor-widget data-title="Nested Dock">
+            <ol>
+              <li>You can still arrange a dock layout in here with other content.</li>
+              <li>You can still arrange a dock layout in here with other content.</li>
+              <li>You can still arrange a dock layout in here with other content.</li>
+              <li>You can still arrange a dock layout in here with other content.</li>
+              <li>You can still arrange a dock layout in here with other content.</li>
+              <li>You can still arrange a dock layout in here with other content.</li>
+              <li>You can still arrange a dock layout in here with other content.</li>
+              <li>You can still arrange a dock layout in here with other content.</li>
+              <li>You can still arrange a dock layout in here with other content.</li>
+              <li>You can still arrange a dock layout in here with other content.</li>
+              <li>You can still arrange a dock layout in here with other content.</li>
+              <li>You can still arrange a dock layout in here with other content.</li>
+              <li>You can still arrange a dock layout in here with other content.</li>
+              <li>You can still arrange a dock layout in here with other content.</li>
+              <li>You can still arrange a dock layout in here with other content.</li>
+              <li>You can still arrange a dock layout in here with other content.</li>
+              <li>You can still arrange a dock layout in here with other content.</li>
+              <li>You can still arrange a dock layout in here with other content.</li>
+              <li>You can still arrange a dock layout in here with other content.</li>
+              <li>You can still arrange a dock layout in here with other content.</li>
+              <li>You can still arrange a dock layout in here with other content.</li>
+              <li>You can still arrange a dock layout in here with other content.</li>
+              <li>You can still arrange a dock layout in here with other content.</li>
+              <li>You can still arrange a dock layout in here with other content.</li>
+              <li>You can still arrange a dock layout in here with other content.</li>
+              <li>You can still arrange a dock layout in here with other content.</li>
+              <li>You can still arrange a dock layout in here with other content.</li>
+            </ol>
+          </phosphor-widget>
+        </phosphor-dock-layout>
       </phosphor-widget>
     </phosphor-tab-layout>
     <script src="main.js"></script>

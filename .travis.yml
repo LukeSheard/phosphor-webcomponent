@@ -31,3 +31,10 @@ jobs:
       script: yarn build
     - stage: Example
       script: yarn example:build
+      deploy:
+        provider: pages
+        skip_cleanup: true
+        github_token: $GITHUB_TOKEN
+        local_dir: example/public
+        on:
+          branch: master
