@@ -12,7 +12,7 @@ export abstract class HTMLPhosphorElement<BasePanel extends PhosphorLayoutPanel>
   private _resizeListener: () => void;
 
   resize() {
-    debug(`Resizing ${this}`)
+    debug(`Resizing ${this}`);
     this._layout.fit();
   }
 
@@ -37,7 +37,7 @@ export abstract class HTMLPhosphorElement<BasePanel extends PhosphorLayoutPanel>
   public disconnectedCallback() {
     if (this._layout.isAttached) {
       window.removeEventListener("resize", this._resizeListener);
-      
+
       try {
         Widget.detach(this._layout);
       } catch (e) {

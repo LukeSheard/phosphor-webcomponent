@@ -18,7 +18,9 @@ phosphor-tab-layout {
   align-items: stretch;
 }
 
-.p-StackedPanel, .p-TabPanel, .p-DockPanel {
+.p-StackedPanel,
+.p-TabPanel,
+.p-DockPanel {
   flex: 1;
   position: relative;
   display: block;
