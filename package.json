@@ -18,8 +18,8 @@
     "example:package": "npm run build:dev --watch",
     "example:example": "webpack-dev-server --config ./example/webpack.config.ts",
     "example:build": "webpack --config ./example/webpack.config.ts",
-    "prepublishOnly": "yarn build",
-    "prettier": "prettier --list-different --write packages/*/src/**/*"
+    "lint": "tslint --project tsconfig.json",
+    "prepublishOnly": "yarn build"
   },
   "repository": {
     "type": "git",
@@ -48,6 +48,9 @@
     "style-loader": "^0.19.1",
     "ts-loader": "^3.2.0",
     "ts-node": "^3.3.0",
+    "tslint": "^5.8.0",
+    "tslint-config-prettier": "^1.6.0",
+    "tslint-plugin-prettier": "^1.3.0",
     "typescript": "^2.6.2",
     "webpack": "^3.10.0"
   },

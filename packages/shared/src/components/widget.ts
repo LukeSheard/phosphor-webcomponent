@@ -1,5 +1,5 @@
-import * as debug from "debug";
 import { Widget } from "@phosphor/widgets";
+import * as debug from "debug";
 import { HTMLPhosphorElement } from "./base-element";
 
 const log = debug("phosphor:layout:widget");
@@ -30,7 +30,13 @@ export class HTMLPhosphorWidgetElement extends HTMLElement {
     return ["data-title", "data-closable"];
   }
 
-  public attributeChangedCallback(attributeName: string, _oldValue: string, value: string): void {
+  constructor() {
+    super();
+    this.widget = null;
+    this.title = this.getAttribute("data-title") as string;
+  }
+
+  public attributeChangedCallback(attributeName: string, _: string, value: string): void {
     switch (attributeName) {
       case "data-title": {
         this.title = value;
@@ -48,15 +54,23 @@ export class HTMLPhosphorWidgetElement extends HTMLElement {
     }
   }
 
-  constructor() {
-    super();
-    this.widget = null;
-    this.title = this.getAttribute("data-title") as string;
-  }
-
-  resize() {
+  public resize() {
     log(`${this.title}: Resize`);
     resize(this.children);
+    this.dispatchEvent(new CustomEvent("resize"));
+  }
+
+  public remove(): void {
+    if (this.widget) {
+      this.widget.parent = null;
+      this.dispatchEvent(new CustomEvent("remove"));
+    } else {
+      log(`${this} is not attached, cannot be removed from layout`);
+    }
+  }
+
+  public toString(): string {
+    return `<phosphor-widget "${this.getAttribute("data-title")}" />`;
   }
 }
 

@@ -10,6 +10,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@phosphor/algorithm": "^1.1.2",
     "@phosphor/widgets": "^1.5.0",
     "phosphor-layout-shared": "^1.0.0"
   }

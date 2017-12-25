@@ -19,17 +19,23 @@
     <h1>
       Hello There...
     </h1>
-    <phosphor-tab-layout>
+    <phosphor-tab-layout id="main-layout">
       <phosphor-widget data-title="Tab 1">
         <phosphor-dock-layout>
-            <phosphor-widget data-title="Widget 2">
-                Hello World
+            <phosphor-widget data-title="Widget 1">
+              Base Widget
             </phosphor-widget>
-            <phosphor-widget data-title="Widget 2" data-mode="split-bottom">
-                Hello World
+            <phosphor-widget data-title="Widget 2" data-mode="split-bottom" data-relative="Widget 1">
+              Split Half Relative Widget
             </phosphor-widget>
-            <phosphor-widget data-title="Widget 3" data-mode="split-right" data-closable="true">
-                Hello World
+            <phosphor-widget data-title="Widget 3" data-mode="split-left" data-closable="true" data-relative="Widget 2">
+              Split Half Relative Widget
+            </phosphor-widget>
+            <phosphor-widget data-title="Widget 4" data-mode="tab-after" data-closable="false" data-relative="Widget 1">
+              Dock After Widget
+            </phosphor-widget>
+            <phosphor-widget data-title="Widget 5" data-mode="tab-after" data-closable="false" data-relative="Widget 2">
+              Dock Before Widget
             </phosphor-widget>
           </phosphor-dock-layout>
         </phosphor-widget>
@@ -73,5 +79,8 @@
       </phosphor-widget>
     </phosphor-tab-layout>
     <script src="main.js"></script>
+    <script>
+      document.getElementById("main-layout").addEventListener("tab-change", console.log.bind(console));
+    </script>
   </body>
 </html>

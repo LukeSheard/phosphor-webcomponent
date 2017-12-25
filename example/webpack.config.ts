@@ -4,22 +4,18 @@ import { Configuration } from "webpack";
 
 const config: Configuration = {
   context: __dirname,
+  devServer: {
+    contentBase: join(__dirname, "public")
+  },
   devtool: "source-map",
   entry: [
     // node_modules
     "document-register-element",
 
-    // web components
-    "phosphor-layout-shared/dist/shared.css",
+    "phosphor-dock-layout",
 
-    "phosphor-dock-layout/src", // hack to access typescript in dev
-    
-    "phosphor-tab-layout/src", // hack to access typescript in dev
+    "phosphor-tab-layout"
   ],
-  output: {
-    path: join(__dirname, "public"),
-    filename: "[name].js"
-  },
   module: {
     rules: [
       {
@@ -43,20 +39,19 @@ const config: Configuration = {
       }
     ]
   },
-  devServer: {
-    contentBase: join(__dirname, "public")
+  output: {
+    filename: "[name].js",
+    path: join(__dirname, "public")
   },
-  plugins: [
-    new ExtractTextPlugin(`[name].css`),
-  ],
+  plugins: [new ExtractTextPlugin(`[name].css`)],
   resolve: {
-    extensions: [
-      ".ts",
-      ".js",
-      ".css",
-      ".scss"
-    ]
+    alias: {
+      "phosphor-dock-layout": join(__dirname, "..", "packages", "dock-layout", "src"),
+      "phosphor-layout-shared": join(__dirname, "..", "packages", "shared", "src"),
+      "phosphor-tab-layout": join(__dirname, "..", "packages", "tab-layout", "src")
+    },
+    extensions: [".ts", ".js", ".css", ".scss"]
   }
-}
+};
 
 export default config;

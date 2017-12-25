@@ -6,18 +6,27 @@ export class PhosphorContentWidget extends Widget {
     super();
     this.title.label = widget.getAttribute("data-title") || "UNKNOWN";
     this.node.appendChild(widget);
-    this.title.closable = widget.getAttribute("data-closable") !== null && widget.getAttribute("data-closable") !== "false";
+    this.title.closable =
+      widget.getAttribute("data-closable") !== null && widget.getAttribute("data-closable") !== "false";
   }
 
-  onResize() {
+  public onResize() {
     (this.node.firstChild as HTMLPhosphorWidgetElement).resize();
   }
 
-  onBeforeAttach() {
+  public onBeforeAttach() {
     (this.node.firstChild as HTMLPhosphorWidgetElement).widget = this;
   }
 
-  onBeforeDetach() {
+  public onBeforeDetach() {
     (this.node.firstChild as HTMLPhosphorWidgetElement).widget = null;
+  }
+
+  public onBeforeHide() {
+    (this.node.firstChild as HTMLPhosphorWidgetElement).dispatchEvent(new CustomEvent("widget-hide"));
+  }
+
+  public onBeforeShow() {
+    (this.node.firstChild as HTMLPhosphorWidgetElement).dispatchEvent(new CustomEvent("widget-show"));
   }
 }
