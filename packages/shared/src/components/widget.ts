@@ -23,7 +23,6 @@ export class HTMLPhosphorWidgetElement extends HTMLElement {
     return "phosphor-widget";
   }
 
-  public title: string;
   public widget: Widget | null;
 
   static get observedAttributes(): string[] {
@@ -33,13 +32,15 @@ export class HTMLPhosphorWidgetElement extends HTMLElement {
   constructor() {
     super();
     this.widget = null;
-    this.title = this.getAttribute("data-title") as string;
+    if (!this.hasAttribute("data-title")) {
+      log(`Removing ${this} because it does not have required attribute "data-title"`);
+      this.remove();
+    }
   }
 
   public attributeChangedCallback(attributeName: string, _: string, value: string): void {
     switch (attributeName) {
       case "data-title": {
-        this.title = value;
         if (this.widget) {
           this.widget.title.label = this.title;
         }
@@ -64,9 +65,9 @@ export class HTMLPhosphorWidgetElement extends HTMLElement {
     if (this.widget) {
       this.widget.parent = null;
       this.dispatchEvent(new CustomEvent("remove"));
-    } else {
-      log(`${this} is not attached, cannot be removed from layout`);
     }
+
+    HTMLElement.prototype.remove.call(this);
   }
 
   public toString(): string {

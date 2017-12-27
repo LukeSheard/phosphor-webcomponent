@@ -65,11 +65,11 @@ export class HTMLPhosphorTabElement extends HTMLPhosphorElement<TabPanel> {
   }
 
   set currentTabName(title: string | null) {
-    if (!title) {
+    if (typeof title !== "string") {
       throw Error("Tab name must be a string");
     }
 
-    const widget = this.getWidget(title as string);
+    const widget = this.getWidget(title);
     if (!widget) {
       throw Error(`Cannot find ${title} widget`);
     }

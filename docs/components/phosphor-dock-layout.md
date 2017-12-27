@@ -1,2 +1,0 @@
-# Phosphor Doc Layout
-
