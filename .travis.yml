@@ -23,11 +23,16 @@ before_install:
 install:
   - yarn
 
+stages:
+  - Test
+  - name: Example
+    if: branch = master
+
 jobs:
   include:
-    - stage: Build / Test
+    - stage: Test
       script: yarn lint
-    - stage: Build / Test
+    - stage: Test
       script: yarn build
     - stage: Example
       script: yarn example:build
@@ -36,5 +41,3 @@ jobs:
         skip_cleanup: true
         github_token: $GITHUB_TOKEN
         local_dir: example/public
-        on:
-          branch: master
