@@ -36,9 +36,26 @@ export abstract class HTMLPhosphorElement<BasePanel extends PhosphorLayoutPanel>
   }
 
   public appendChild(child: any) {
+    if (child.tagName.toLowerCase() !== "phosphor-widget") {
+      throw Error("Children must be phosphor widgets");
+    }
+    const content = this.addWidget(child);
+    return content.node as any;
+  }
+
+  public removeChild<T extends Node>(child: any): T {
     if (this._layout) {
-      const content = this.addWidget(child);
-      return content.node;
+      const title = child.getAttribute("data-title");
+      if (!title) {
+        throw new Error("Child does not have a title and therefore cannot be part of the layout");
+      }
+
+      const widget = this.getWidget(title);
+      if (!widget) {
+        throw new DOMException("Widget is not part of the custom Layout");
+      }
+      widget.parent = null;
+      return widget.node as any;
     }
 
     return child;
