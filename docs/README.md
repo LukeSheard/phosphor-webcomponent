@@ -6,6 +6,6 @@ This is a collection of two [web components](https://developer.mozilla.org/en-US
 
 ## Repo Structure
 
-- `packages/dock-layout` is the [Dock Layout](./api/phosphor-dock-layout.md) CustomElement
-- `packages/tab-layout` is the [Tab Layout](./api/phosphor-tab-layout.md) CustomElement
+- `packages/dock-layout` is the [Dock Layout](./phosphor-dock-layout.md) CustomElement
+- `packages/tab-layout` is the [Tab Layout](./phosphor-tab-layout.md) CustomElement
 - `packages/shared` is all of the shared pieces needed by the dock and tab layouts. 
