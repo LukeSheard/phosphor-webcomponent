@@ -5,8 +5,11 @@ This package is the core package that underpins the [Phosphor-Dock-Layout](./pho
 
 ### Attributes
 
-- `data-title`
-- `data-closable`
+- `data-title` **[Required]** *[observed]* Represents the title the given to the widget in the Layout. When the attribute changes, it will update the widget title in the layout.
+- `data-closable` *[observed]* Represents if the widget is closable.
+- `data-mode` When mounted in a [Dock Layout](./phosphor-dock-layout.md) this represents the split method used by the dock-layout.
+
+Note if any of the required attributes are not found on the widget component it will remove itself from the DOM when it is mounted.
 
 ### Properties / Methods
 
@@ -19,3 +22,11 @@ This package is the core package that underpins the [Phosphor-Dock-Layout](./pho
 - `resize`
 - `widget-hide`
 - `widget-show`
+
+### Usage
+
+```html
+<phosphor-widget data-title="Widget">
+  <!-- Your Content Goes here -->
+</phosphor-widget>
+```
