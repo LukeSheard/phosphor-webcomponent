@@ -8,4 +8,3 @@ package-lock.json
 !example/public/*.js
 !example/public/*.css
 !example/public/*.map
-packages/*/README.md
