@@ -12,4 +12,4 @@ This is a collection of two [web components](https://developer.mozilla.org/en-US
 
 ## Documentation 
 
-[Read the docs](./master/docs)
+[Read the docs](./docs)
