@@ -1,16 +1,20 @@
 # Phosphor Doc Layout
 
-## Attributes / Events / Properties
+## Attributes / Events / Properties & Methods
 
 ### Attributes
 
 - `data-spacing` *[observed]* Sets the spacing between the widgets in the layout.
 
 ### Events
-- `layout-change`
+- `layout-change` dispatched whenever the dock layout is modified. 
+
+### Properties & Methods
+
+- `saveLayout()` - save the internal repsentation of the layout currently on screen. **NOT** json serializable.
+- `restoreLayout(layout)` - takes a phosphor layout and presents it to be currently visable 
 
 ## Usage
-
 
 ```html
   <phosphor-dock-layout>
