@@ -6,7 +6,7 @@ const log = debug("phosphor:layout:widget");
 
 const PHOSPHOR_TAGS = ["phosphor-dock-layout", "phosphor-tab-layout"];
 
-function resize(children: HTMLCollection) {
+export function resize(children: HTMLCollection) {
   for (let i = 0, l = children.length; i < l; i += 1) {
     const child: Element = children[i];
     if (PHOSPHOR_TAGS.indexOf(child.tagName.toLowerCase()) > -1) {

@@ -34,6 +34,8 @@ jobs:
       script: yarn lint
     - stage: Test
       script: yarn build
+    - stage: Test
+      script: yarn test:ci
     - stage: Example
       script: yarn example:build
       deploy:
