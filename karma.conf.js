@@ -9,7 +9,7 @@ module.exports = function(config) {
         "packages/*/src/**/test_*.ts"
       ],
       preprocessors: {
-          "**/*.ts": ['webpack', 'sourcemap']
+          "**/*.ts": ['webpack']
       },
       mime: {
         'text/x-typescript': ['ts','tsx']
@@ -28,12 +28,7 @@ module.exports = function(config) {
               test: /\.(scss|css)$/,
               use: [
                 "style-loader",
-                {
-                  loader: "css-loader",
-                  options: {
-                    sourceMap: true
-                  }
-                },
+                "css-loader",
                 "sass-loader"
               ]
               
