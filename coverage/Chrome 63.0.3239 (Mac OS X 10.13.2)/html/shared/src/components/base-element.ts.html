@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for shared/src/components/base-element.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">shared/src/components/</a> base-element.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">2.13% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>1/47</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/11</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">2.33% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>1/43</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import { DockPanel, TabPanel, Widget } from "@phosphor/widgets";</span>
+<span class="cstat-no" title="statement not covered" >import * as debug from "debug";</span>
+import { PhosphorContentWidget } from "./content-widget";
+<span class="cstat-no" title="statement not covered" >import { HTMLPhosphorWidgetElement } from "./widget";</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >const log = debug("phosphor:layout:dock");</span>
+&nbsp;
+export type PhosphorLayoutPanel = TabPanel | DockPanel;
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >export abstract class <span class="cstat-no" title="statement not covered" >HTMLPhosphorElement&lt;</span>BasePanel extends PhosphorLayoutPanel&gt; extends <span class="cstat-no" title="statement not covered" >HTMLElement </span>{</span></span>
+  protected _layout: BasePanel;
+  private _resizeListener: () =&gt; void;
+&nbsp;
+<span class="fstat-no" title="function not covered" >  constructor() {</span>
+    super();
+<span class="cstat-no" title="statement not covered" >    this._resizeListener = <span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" ></span>this.resize();</span></span>
+<span class="cstat-no" title="statement not covered" >    this._layout = this._initLayout();</span>
+<span class="cstat-no" title="statement not covered" >    this._getChildWidgets().forEach(<span class="fstat-no" title="function not covered" >child </span>=&gt; <span class="cstat-no" title="statement not covered" >this.addWidget(child))</span>;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public <span class="cstat-no" title="statement not covered" >resize() {</span></span>
+<span class="cstat-no" title="statement not covered" >    debug(`Resizing ${this}`);</span>
+<span class="cstat-no" title="statement not covered" >    this._layout.fit();</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public <span class="cstat-no" title="statement not covered" >connectedCallback() {</span></span>
+<span class="cstat-no" title="statement not covered" >    if (!this._layout.isAttached) {</span>
+<span class="cstat-no" title="statement not covered" >      Widget.attach(this._layout, this);</span>
+    }
+<span class="cstat-no" title="statement not covered" >    window.addEventListener("resize", this._resizeListener);</span>
+<span class="cstat-no" title="statement not covered" >    this.resize();</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public <span class="cstat-no" title="statement not covered" >disconnectedCallback() {</span></span>
+<span class="cstat-no" title="statement not covered" >    window.removeEventListener("resize", this._resizeListener);</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public <span class="cstat-no" title="statement not covered" >appendChild(child: any)</span> {</span>
+<span class="cstat-no" title="statement not covered" >    if (child.tagName.toLowerCase() !== "phosphor-widget") {</span>
+<span class="cstat-no" title="statement not covered" >      throw Error("Children must be phosphor widgets");</span>
+    }
+<span class="cstat-no" title="statement not covered" >    const content = this.addWidget(child);</span>
+<span class="cstat-no" title="statement not covered" >    return content.node as any;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public <span class="cstat-no" title="statement not covered" >removeChild&lt;T extends Node&gt;(child: any)</span>: T {</span>
+<span class="cstat-no" title="statement not covered" >    if (this._layout) {</span>
+<span class="cstat-no" title="statement not covered" >      const title = child.getAttribute("data-title");</span>
+<span class="cstat-no" title="statement not covered" >      if (!title) {</span>
+<span class="cstat-no" title="statement not covered" >        throw new Error("Child does not have a title and therefore cannot be part of the layout");</span>
+      }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      const widget = this.getWidget(title);</span>
+<span class="cstat-no" title="statement not covered" >      if (!widget) {</span>
+<span class="cstat-no" title="statement not covered" >        throw new DOMException("Widget is not part of the custom Layout");</span>
+      }
+<span class="cstat-no" title="statement not covered" >      widget.parent = null;</span>
+<span class="cstat-no" title="statement not covered" >      return widget.node as any;</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return child;</span>
+  }
+&nbsp;
+  protected abstract _initLayout(): BasePanel;
+  protected abstract addWidget(child: HTMLPhosphorWidgetElement): PhosphorContentWidget;
+  protected abstract getWidget(title: string): PhosphorContentWidget | null;
+&nbsp;
+<span class="fstat-no" title="function not covered" >  protected <span class="cstat-no" title="statement not covered" >_getChildWidgets(): HTMLPhosphorWidgetElement[] {</span></span>
+<span class="cstat-no" title="statement not covered" >    return Array.prototype.slice.call(this.children).filter(<span class="fstat-no" title="function not covered" >(child: Element)</span> =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      const validTagName = child.tagName.toLowerCase() === HTMLPhosphorWidgetElement.is;</span>
+<span class="cstat-no" title="statement not covered" >      if (!validTagName) {</span>
+<span class="cstat-no" title="statement not covered" >        log(`Removing ${child.tagName}[id=${child.id}] from phosphor layout because it is not a phosphor-widget`);</span>
+<span class="cstat-no" title="statement not covered" >        child.remove();</span>
+      }
+<span class="cstat-no" title="statement not covered" >      return validTagName;</span>
+    });
+  }
+<span class="cstat-no" title="statement not covered" >}</span>
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Dec 29 2017 15:34:23 GMT+0000 (GMT)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

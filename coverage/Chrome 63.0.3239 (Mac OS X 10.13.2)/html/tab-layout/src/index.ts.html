@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for tab-layout/src/index.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">tab-layout/src/</a> index.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">2.27% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>1/44</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/15</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/12</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">2.44% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>1/41</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import { TabPanel } from "@phosphor/widgets";</span>
+<span class="cstat-no" title="statement not covered" >import * as debug from "debug";</span>
+<span class="cstat-no" title="statement not covered" >import { HTMLPhosphorElement, HTMLPhosphorWidgetElement, PhosphorContentWidget } from "phosphor-layout-shared";</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >export class <span class="cstat-no" title="statement not covered" >HTMLPhosphorTabElement </span>extends <span class="cstat-no" title="statement not covered" >HTMLPhosphorElement&lt;TabPanel&gt; </span>{</span></span>
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  static get is() {</span></span>
+<span class="cstat-no" title="statement not covered" >    return "phosphor-tab-layout";</span>
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  static get observedAttributes(): string[] {</span></span>
+<span class="cstat-no" title="statement not covered" >    return ["data-tabs-movable"];</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  constructor() {</span>
+    super();
+<span class="cstat-no" title="statement not covered" >    this._layout.currentChanged.connect(<span class="fstat-no" title="function not covered" >(_panel: TabPanel, signal: TabPanel.ICurrentChangedArgs)</span> =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      const widget = signal.currentWidget as PhosphorContentWidget;</span>
+<span class="cstat-no" title="statement not covered" >      this.dispatchEvent(</span>
+        new CustomEvent("tab-change", {
+          detail: {
+            title: widget.title.label,
+            widget: widget.node.firstChild
+          }
+        })
+      );
+    });
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public <span class="cstat-no" title="statement not covered" >attributeChangedCallback(attr: string, _: string, newValue: string)</span> {</span>
+<span class="cstat-no" title="statement not covered" >    switch (attr) {</span>
+      case "data-tabs-movable": {
+<span class="cstat-no" title="statement not covered" >        if (this._layout) {</span>
+<span class="cstat-no" title="statement not covered" >          this._layout.tabsMovable = newValue === "true";</span>
+        }
+      }
+    }
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  protected <span class="cstat-no" title="statement not covered" >_initLayout() {</span></span>
+<span class="cstat-no" title="statement not covered" >    return new TabPanel();</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  protected <span class="cstat-no" title="statement not covered" >addWidget(child: HTMLPhosphorWidgetElement)</span>: PhosphorContentWidget {</span>
+<span class="cstat-no" title="statement not covered" >    const widget = new PhosphorContentWidget(child);</span>
+<span class="cstat-no" title="statement not covered" >    this._layout.addWidget(widget);</span>
+<span class="cstat-no" title="statement not covered" >    return widget;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  protected <span class="cstat-no" title="statement not covered" >getWidget(title: string)</span>: PhosphorContentWidget | null {</span>
+<span class="cstat-no" title="statement not covered" >    const matchingWidgets = this._layout.widgets.filter(<span class="fstat-no" title="function not covered" >widget </span>=&gt; <span class="cstat-no" title="statement not covered" >widget.title.label === title)</span>;</span>
+<span class="cstat-no" title="statement not covered" >    if (matchingWidgets.length) {</span>
+<span class="cstat-no" title="statement not covered" >      if (matchingWidgets.length &gt; 1) {</span>
+<span class="cstat-no" title="statement not covered" >        debug(`${this}`)(`Multiple matching widgets with title ${title}`);</span>
+      }
+<span class="cstat-no" title="statement not covered" >      return matchingWidgets[0] as PhosphorContentWidget;</span>
+    }
+<span class="cstat-no" title="statement not covered" >    return null;</span>
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  get currentTabName(): string | null {</span></span>
+<span class="cstat-no" title="statement not covered" >    if (this._layout.currentWidget) {</span>
+<span class="cstat-no" title="statement not covered" >      return this._layout.currentWidget.title.label;</span>
+    }
+<span class="cstat-no" title="statement not covered" >    return null;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  set currentTabName(title: string | null)</span> {
+<span class="cstat-no" title="statement not covered" >    if (typeof title !== "string") {</span>
+<span class="cstat-no" title="statement not covered" >      throw Error("Tab name must be a string");</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    const widget = this.getWidget(title);</span>
+<span class="cstat-no" title="statement not covered" >    if (!widget) {</span>
+<span class="cstat-no" title="statement not covered" >      throw Error(`Cannot find ${title} widget`);</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    this._layout.currentWidget = widget;</span>
+  }
+<span class="cstat-no" title="statement not covered" >}</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >customElements.define(HTMLPhosphorTabElement.is, HTMLPhosphorTabElement);</span>
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Dec 29 2017 15:34:23 GMT+0000 (GMT)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for dock-layout/src/index.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">dock-layout/src/</a> index.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">2.56% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>2/78</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/17</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/22</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">2.74% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>2/73</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import { IIterator, topologicSort } from "@phosphor/algorithm";</span>
+<span class="cstat-no" title="statement not covered" >import { DockLayout, DockPanel } from "@phosphor/widgets";</span>
+<span class="cstat-no" title="statement not covered" >import * as debug from "debug";</span>
+<span class="cstat-no" title="statement not covered" >import { HTMLPhosphorElement, HTMLPhosphorWidgetElement, PhosphorContentWidget } from "phosphor-layout-shared";</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >const log = debug("phosphor:layout:dock");</span>
+&nbsp;
+<span class="fstat-no" title="function not covered" >function iterToArray&lt;T&gt;(iter: IIterator&lt;T&gt;)</span>: T[] {
+<span class="cstat-no" title="statement not covered" >  let value = iter.next();</span>
+<span class="cstat-no" title="statement not covered" >  const res = [];</span>
+<span class="cstat-no" title="statement not covered" >  while (value) {</span>
+<span class="cstat-no" title="statement not covered" >    res.push(value);</span>
+<span class="cstat-no" title="statement not covered" >    value = iter.next();</span>
+  }
+<span class="cstat-no" title="statement not covered" >  return res;</span>
+}
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >export class <span class="cstat-no" title="statement not covered" >HTMLPhosphorDockElement </span>extends <span class="cstat-no" title="statement not covered" >HTMLPhosphorElement&lt;DockPanel&gt; </span>{</span></span>
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  static get is() {</span></span>
+<span class="cstat-no" title="statement not covered" >    return "phosphor-dock-layout";</span>
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  static get observedAttributes(): string[] {</span></span>
+<span class="cstat-no" title="statement not covered" >    return ["data-spacing"];</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  constructor() {</span>
+    super();
+<span class="cstat-no" title="statement not covered" >    this._layout.layoutModified.connect(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >      this.dispatchEvent(</span>
+        new CustomEvent("layout-change", {
+          detail: {
+            layout: this.saveLayout()
+          }
+        })
+      );
+    });
+  }
+&nbsp;
+  /**
+   * Get the layout configuration for this DockPanel
+   */
+<span class="fstat-no" title="function not covered" >  public <span class="cstat-no" title="statement not covered" >saveLayout(): DockPanel.ILayoutConfig {</span></span>
+<span class="cstat-no" title="statement not covered" >    return this._layout.saveLayout();</span>
+  }
+&nbsp;
+  /**
+   * Restore the configuration for this DockPanel
+   */
+<span class="fstat-no" title="function not covered" >  public <span class="cstat-no" title="statement not covered" >restoreLayout(layout: DockPanel.ILayoutConfig)</span>: void {</span>
+<span class="cstat-no" title="statement not covered" >    return this._layout.restoreLayout(layout);</span>
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  public get selectedWidgets() {</span></span>
+<span class="cstat-no" title="statement not covered" >    return iterToArray(this._layout.selectedWidgets()).map(<span class="fstat-no" title="function not covered" >widget </span>=&gt; <span class="cstat-no" title="statement not covered" >widget.title.label)</span>;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public <span class="cstat-no" title="statement not covered" >selectWidget(title: string)</span> {</span>
+<span class="cstat-no" title="statement not covered" >    const widget = this.getWidget(title);</span>
+<span class="cstat-no" title="statement not covered" >    if (widget) {</span>
+<span class="cstat-no" title="statement not covered" >      this._layout.selectWidget(widget);</span>
+    } else {
+<span class="cstat-no" title="statement not covered" >      log(`Cannot find widget ${title}`);</span>
+    }
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public <span class="cstat-no" title="statement not covered" >attributeChangedCallback(attr: string, _: string, newValue: string)</span> {</span>
+<span class="cstat-no" title="statement not covered" >    switch (attr) {</span>
+      case "data-spacing": {
+<span class="cstat-no" title="statement not covered" >        if (this._layout) {</span>
+<span class="cstat-no" title="statement not covered" >          try {</span>
+<span class="cstat-no" title="statement not covered" >            const value = newValue || "4";</span>
+<span class="cstat-no" title="statement not covered" >            this._layout.spacing = parseFloat(value);</span>
+          } catch (e) {
+<span class="cstat-no" title="statement not covered" >            log(e);</span>
+          }
+        }
+      }
+    }
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  protected <span class="cstat-no" title="statement not covered" >_initLayout() {</span></span>
+<span class="cstat-no" title="statement not covered" >    return new DockPanel();</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  protected <span class="cstat-no" title="statement not covered" >addWidget(child: HTMLPhosphorWidgetElement)</span>: PhosphorContentWidget {</span>
+<span class="cstat-no" title="statement not covered" >    const widget = new PhosphorContentWidget(child);</span>
+<span class="cstat-no" title="statement not covered" >    const options: DockPanel.IAddOptions = {</span>
+      mode: (child.getAttribute("data-mode") || "split-right") as DockLayout.InsertMode
+    };
+<span class="cstat-no" title="statement not covered" >    if (child.hasAttribute("data-relative")) {</span>
+<span class="cstat-no" title="statement not covered" >      options.ref = this.getWidget(child.getAttribute("data-relative") as string);</span>
+    }
+<span class="cstat-no" title="statement not covered" >    this._layout.addWidget(widget, options);</span>
+<span class="cstat-no" title="statement not covered" >    return widget;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  protected <span class="cstat-no" title="statement not covered" >getWidget(title: string)</span>: PhosphorContentWidget | null {</span>
+<span class="cstat-no" title="statement not covered" >    const widgets = iterToArray(this._layout.widgets());</span>
+<span class="cstat-no" title="statement not covered" >    for (let i = 0; i &lt; widgets.length; i += 1) {</span>
+<span class="cstat-no" title="statement not covered" >      const widget = widgets[i] as PhosphorContentWidget;</span>
+<span class="cstat-no" title="statement not covered" >      if (widget.title.label === title) {</span>
+<span class="cstat-no" title="statement not covered" >        return widget;</span>
+      }
+    }
+<span class="cstat-no" title="statement not covered" >    return null;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  protected <span class="cstat-no" title="statement not covered" >_getChildWidgets(): HTMLPhosphorWidgetElement[] {</span></span>
+<span class="cstat-no" title="statement not covered" >    const children: HTMLPhosphorWidgetElement[] = Array.prototype.slice.call(this.children).filter(<span class="fstat-no" title="function not covered" >(child: Element)</span> =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      const validTagName = child.tagName.toLowerCase() === HTMLPhosphorWidgetElement.is;</span>
+<span class="cstat-no" title="statement not covered" >      if (!validTagName) {</span>
+<span class="cstat-no" title="statement not covered" >        log(`${child} from phosphor layout because it is not a phosphor-widget`);</span>
+<span class="cstat-no" title="statement not covered" >        child.remove();</span>
+      }
+<span class="cstat-no" title="statement not covered" >      return validTagName;</span>
+    });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    const childrenMap = children.reduce(</span>
+<span class="fstat-no" title="function not covered" >      (widgets, widget)</span> =&gt; <span class="cstat-no" title="statement not covered" >({</span>
+        ...widgets,
+        [widget.getAttribute("data-title") as string]: widget
+      }),
+      {} as { [key: string]: HTMLPhosphorWidgetElement | undefined }
+    );
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    const widgetGraph: any = children.filter(<span class="fstat-no" title="function not covered" >widget </span>=&gt; <span class="cstat-no" title="statement not covered" >widget.hasAttribute("data-relative"))</span>.map(<span class="fstat-no" title="function not covered" >widget </span>=&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      return [widget.getAttribute("data-title") as string, widget.getAttribute("data-relative") as string];</span>
+    });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    const sortedWidgets = topologicSort&lt;string&gt;(widgetGraph)</span>
+      .reverse()
+      .map(<span class="fstat-no" title="function not covered" >(title: string)</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >        const widget: HTMLPhosphorWidgetElement = childrenMap[title] as HTMLPhosphorWidgetElement;</span>
+<span class="cstat-no" title="statement not covered" >        delete childrenMap[title];</span>
+<span class="cstat-no" title="statement not covered" >        return widget;</span>
+      });
+<span class="cstat-no" title="statement not covered" >    const remainingWidgets = Object.keys(childrenMap).map(<span class="fstat-no" title="function not covered" >key </span>=&gt; <span class="cstat-no" title="statement not covered" >childrenMap[key] as HTMLPhosphorWidgetElement)</span>;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return sortedWidgets.concat(remainingWidgets);</span>
+  }
+<span class="cstat-no" title="statement not covered" >}</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >customElements.define(HTMLPhosphorDockElement.is, HTMLPhosphorDockElement);</span>
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Dec 29 2017 15:34:23 GMT+0000 (GMT)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>
