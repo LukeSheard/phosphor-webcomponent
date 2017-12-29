@@ -9,7 +9,6 @@ cache:
   - node_modules
 
 addons:
-  firefox: latest
   chrome: stable
 
 sudo: false
