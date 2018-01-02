@@ -11,7 +11,7 @@
 
 ### Properties & Methods
 
-- `saveLayout()` - save the internal repsentation of the layout currently on screen. **NOT** json serializable.
+- `saveLayout()` - save the internal repsentation of the layout currently on screen. N.B. This is **NOT** json serializable.
 - `restoreLayout(layout)` - takes a phosphor layout and presents it to be currently visable 
 
 ## Usage

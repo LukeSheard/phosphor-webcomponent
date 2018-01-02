@@ -4,10 +4,16 @@
 
 ### Attributes
 
-- `data-tabs-movable`
+- `data-tabs-movable` *[observed]* Sets if the tabs can be reordered
 
 ### Events
-- `tab-change`
+- `tab-change` Fired whenever the current tab is changed. 
+```typescript
+{
+  title: string;
+  widget: HTMLPhosphorWidgetElement; 
+}
+```
 
 ## Usage
 
