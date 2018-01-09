@@ -19,65 +19,14 @@
     <h1>
       Hello There...
     </h1>
-    <phosphor-tab-layout id="main-layout">
-      <phosphor-widget data-title="Tab 1">
-        <phosphor-dock-layout>
-            <phosphor-widget data-title="Widget 1">
-              Base Widget
-            </phosphor-widget>
-            <phosphor-widget data-title="Widget 2" data-mode="split-bottom" data-relative="Widget 1">
-              Split Half Relative Widget
-            </phosphor-widget>
-            <phosphor-widget data-title="Widget 3" data-mode="split-left" data-closable="true" data-relative="Widget 2">
-              Split Half Relative Widget
-            </phosphor-widget>
-            <phosphor-widget data-title="Widget 4" data-mode="tab-after" data-closable="false" data-relative="Widget 1">
-              Dock After Widget
-            </phosphor-widget>
-            <phosphor-widget data-title="Widget 5" data-mode="tab-after" data-closable="false" data-relative="Widget 2">
-              Dock Before Widget
-            </phosphor-widget>
-          </phosphor-dock-layout>
-        </phosphor-widget>
-      <phosphor-widget data-title="Tab 2" data-closable="true">
-        <div>
-            Here's a second tab in the layout, the dock layout will automatically fill it's parent when it's presented.
-        </div>
-        <phosphor-dock-layout>
-          <phosphor-widget data-title="Nested Dock">
-            <ol>
-              <li>You can still arrange a dock layout in here with other content.</li>
-              <li>You can still arrange a dock layout in here with other content.</li>
-              <li>You can still arrange a dock layout in here with other content.</li>
-              <li>You can still arrange a dock layout in here with other content.</li>
-              <li>You can still arrange a dock layout in here with other content.</li>
-              <li>You can still arrange a dock layout in here with other content.</li>
-              <li>You can still arrange a dock layout in here with other content.</li>
-              <li>You can still arrange a dock layout in here with other content.</li>
-              <li>You can still arrange a dock layout in here with other content.</li>
-              <li>You can still arrange a dock layout in here with other content.</li>
-              <li>You can still arrange a dock layout in here with other content.</li>
-              <li>You can still arrange a dock layout in here with other content.</li>
-              <li>You can still arrange a dock layout in here with other content.</li>
-              <li>You can still arrange a dock layout in here with other content.</li>
-              <li>You can still arrange a dock layout in here with other content.</li>
-              <li>You can still arrange a dock layout in here with other content.</li>
-              <li>You can still arrange a dock layout in here with other content.</li>
-              <li>You can still arrange a dock layout in here with other content.</li>
-              <li>You can still arrange a dock layout in here with other content.</li>
-              <li>You can still arrange a dock layout in here with other content.</li>
-              <li>You can still arrange a dock layout in here with other content.</li>
-              <li>You can still arrange a dock layout in here with other content.</li>
-              <li>You can still arrange a dock layout in here with other content.</li>
-              <li>You can still arrange a dock layout in here with other content.</li>
-              <li>You can still arrange a dock layout in here with other content.</li>
-              <li>You can still arrange a dock layout in here with other content.</li>
-              <li>You can still arrange a dock layout in here with other content.</li>
-            </ol>
-          </phosphor-widget>
-        </phosphor-dock-layout>
+    <phosphor-split-layout>
+      <phosphor-widget data-title="Widget 1" style="background: red">
+        Base Widget
       </phosphor-widget>
-    </phosphor-tab-layout>
+      <phosphor-widget data-title="Widget 2" data-mode="split-bottom" data-relative="Widget 1" style="background: blue">
+        Split Half Relative Widget
+      </phosphor-widget>
+    </phosphor-split-layout>
     <script src="main.js"></script>
     <script>
       document.getElementById("main-layout").addEventListener("tab-change", console.log.bind(console));

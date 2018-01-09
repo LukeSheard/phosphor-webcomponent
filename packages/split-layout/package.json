@@ -1,0 +1,16 @@
+{
+  "name": "phosphor-split-layout",
+  "version": "1.1.1",
+  "description": "",
+  "main": "dist/split-layout.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@phosphor/widgets": "^1.5.0",
+    "phosphor-layout-shared": "^1.1.1"
+  }
+}

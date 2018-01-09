@@ -13,7 +13,7 @@ const config: Configuration = {
     "document-register-element",
 
     "phosphor-dock-layout",
-
+    "phosphor-split-layout",
     "phosphor-tab-layout"
   ],
   module: {
@@ -48,6 +48,7 @@ const config: Configuration = {
     alias: {
       "phosphor-dock-layout": join(__dirname, "..", "packages", "dock-layout", "src"),
       "phosphor-layout-shared": join(__dirname, "..", "packages", "shared", "src"),
+      "phosphor-split-layout": join(__dirname, "..", "packages", "split-layout", "src"),
       "phosphor-tab-layout": join(__dirname, "..", "packages", "tab-layout", "src")
     },
     extensions: [".ts", ".js", ".css", ".scss"]

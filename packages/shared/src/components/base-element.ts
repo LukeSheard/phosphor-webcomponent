@@ -1,13 +1,11 @@
-import { DockPanel, TabPanel, Widget } from "@phosphor/widgets";
+import { Widget } from "@phosphor/widgets";
 import * as debug from "debug";
 import { PhosphorContentWidget } from "./content-widget";
 import { HTMLPhosphorWidgetElement } from "./widget";
 
 const log = debug("phosphor:layout:dock");
 
-export type PhosphorLayoutPanel = TabPanel | DockPanel;
-
-export abstract class HTMLPhosphorElement<BasePanel extends PhosphorLayoutPanel> extends HTMLElement {
+export abstract class HTMLPhosphorElement<BasePanel extends Widget> extends HTMLElement {
   protected _layout: BasePanel;
   private _resizeListener: () => void;
 
@@ -24,7 +22,7 @@ export abstract class HTMLPhosphorElement<BasePanel extends PhosphorLayoutPanel>
   }
 
   public connectedCallback() {
-    if (!this._layout.isAttached) {
+    if (this._layout && !this._layout.isAttached) {
       Widget.attach(this._layout, this);
     }
     window.addEventListener("resize", this._resizeListener);

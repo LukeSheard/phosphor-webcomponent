@@ -10,6 +10,7 @@ phosphor-widget {
 
 phosphor-widget,
 phosphor-dock-layout,
+phosphor-split-layout,
 phosphor-tab-layout {
   display: flex;
   flex: 1;
@@ -19,6 +20,7 @@ phosphor-tab-layout {
 }
 
 .p-StackedPanel,
+.p-SplitPanel,
 .p-TabPanel,
 .p-DockPanel {
   flex: 1;
