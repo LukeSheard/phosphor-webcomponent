@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title>Example Dock Layout</title>
+    <style>
+      body {
+        position: relative;
+        margin: 0;
+        padding: 0;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-content: stretch;
+        align-items: stretch;
+      }
+    </style>
+    <link rel="stylesheet" href="main.css">
+  </head>
+  <body>
+    <h1>
+      Hello There...
+    </h1>
+    <phosphor-split-layout>
+      <phosphor-widget data-title="Widget 1" style="background: red">
+        Base Widget
+      </phosphor-widget>
+      <phosphor-widget data-title="Widget 2" data-mode="split-bottom" data-relative="Widget 1" style="background: blue">
+        Split Half Relative Widget
+      </phosphor-widget>
+    </phosphor-split-layout>
+    <script src="main.js"></script>
+    <script>
+      document.getElementById("main-layout").addEventListener("tab-change", console.log.bind(console));
+    </script>
+  </body>
+</html>
