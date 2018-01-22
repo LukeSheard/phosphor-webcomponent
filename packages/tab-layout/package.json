@@ -1,6 +1,6 @@
 {
   "name": "phosphor-tab-layout",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "",
   "main": "dist/tab-layout.js",
   "scripts": {
@@ -11,6 +11,6 @@
   "license": "MIT",
   "dependencies": {
     "@phosphor/widgets": "^1.5.0",
-    "phosphor-layout-shared": "^1.1.1"
+    "phosphor-layout-shared": "^1.1.2"
   }
 }
