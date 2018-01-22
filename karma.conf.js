@@ -10,7 +10,15 @@ module.exports = function(config) {
         "**/*.ts": "karma-typescript"
     },
     reporters: ["progress", "karma-typescript"],
-    browsers: ["Chrome"],
+    browsers: ['ChromeNoSandbox'],
+  
+      // you can define custom flags
+    customLaunchers: {
+      ChromeNoSandbox: {
+        base: 'Chrome',
+        flags: ['--no-sandbox']
+      }
+    },
     karmaTypescriptConfig: {
       bundlerOptions: {
         entrypoints: /.*\/__tests__\/.*test_.*\.ts$/,
