@@ -1,0 +1,21 @@
+.p-TabPanel {
+  position: relative;
+  display: block;
+}
+
+.p-TabPanel-tabBar {
+  z-index: 1;
+}
+
+.p-TabPanel-stackedPanel {
+  z-index: 0;
+}
+
+.p-StackedPanel-child {
+  border: 2px solid $widget-border;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}

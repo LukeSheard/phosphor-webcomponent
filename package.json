@@ -1,0 +1,61 @@
+{
+  "name": "phosphor-layouts",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "module": "es/index.js",
+  "typings": "es/index.d.ts",
+  "scripts": {
+    "prebuild": "rimraf cjs es phosphor-layout.js phosphor-layout.min.js",
+    "build": "npm-run-all --parallel build:*",
+    "build:tsc": "tsc --project tsconfig.build.json",
+    "build:webpack": "webpack",
+    "lint": "tslint --project tsconfig.json",
+    "prepublishOnly": "yarn build",
+    "test": "karma start",
+    "test:ci": "yarn test --single-run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LukeSheard/phosphor-webcomponent.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LukeSheard/phosphor-webcomponent/issues"
+  },
+  "homepage": "https://github.com/LukeSheard/phosphor-webcomponent#readme",
+  "devDependencies": {
+    "@types/debug": "^0.0.30",
+    "@types/extract-text-webpack-plugin": "^3.0.0",
+    "@types/jasmine": "^2.8.3",
+    "@types/node": "^8.0.54",
+    "@types/webpack": "^3.8.1",
+    "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "jasmine-core": "^2.8.0",
+    "karma": "^2.0.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-jasmine": "^1.1.1",
+    "karma-typescript": "^3.0.9",
+    "lodash": "^4.17.4",
+    "node-sass": "^4.7.2",
+    "npm-run-all": "^4.1.2",
+    "prettier": "^1.9.2",
+    "rimraf": "^2.6.2",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.19.1",
+    "ts-loader": "^3.2.0",
+    "ts-node": "^3.3.0",
+    "tslint": "^5.8.0",
+    "tslint-config-prettier": "^1.6.0",
+    "tslint-plugin-prettier": "^1.3.0",
+    "typescript": "^2.6.2",
+    "webpack": "^3.10.0"
+  },
+  "dependencies": {
+    "@phosphor/widgets": "^1.5.0",
+    "@types/lodash": "^4.14.91"
+  }
+}

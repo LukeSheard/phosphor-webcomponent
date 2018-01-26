@@ -1,0 +1,10 @@
+.p-Widget {
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+
+  &.p-mod-hidden {
+    display: none !important;
+  }
+}

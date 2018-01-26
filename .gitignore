@@ -1,0 +1,15 @@
+# Stuff for node
+package-lock.json
+node_modules
+
+# Logs
+*.log
+
+# Testing
+coverage
+
+# Builds
+cjs
+es
+phosphor-layout.js
+phosphor-layout.min.js

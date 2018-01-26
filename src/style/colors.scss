@@ -1,0 +1,19 @@
+$core-dark: #282f38;
+$core-medium: #848589;
+$core-medium-light: #b8cbbe;
+$core-light: #d5e1d0;
+$core-accent: #8dc88b;
+
+$widget-background: $core-light;
+$widget-border: $core-medium;
+
+$widget-overlay-background: rgba($core-medium-light, 0.4);
+$widget-overlay-border: $core-medium;
+
+$tabbar-tab-border: $core-medium;
+$tabbar-tab-background: $core-light;
+
+$tabbar-tab-current-background: $core-accent;
+$tabbar-tab-current-hover-background: $core-accent;
+
+$tabbar-tab-hover-background: $core-accent;

@@ -1,0 +1,43 @@
+language: node_js
+
+node_js:
+  - '8'
+
+cache:
+  yarn: true
+  directories:
+  - node_modules
+
+sudo: required
+addons:
+  chrome: stable
+
+before_install:
+  - export DISPLAY=:99.0;
+  - sh -e /etc/init.d/xvfb start;
+  - set -e;
+  - npm install --global yarn
+
+install:
+  - yarn
+
+stages:
+  - Test
+  - name: Example
+    if: branch = master
+
+jobs:
+  include:
+    - stage: Test
+      script: yarn lint
+    - stage: Test
+      script: yarn build
+    - stage: Test
+      script: yarn test:ci
+    - stage: Example
+      script: yarn example:build
+      deploy:
+        provider: pages
+        skip_cleanup: true
+        github_token: $GITHUB_TOKEN
+        local_dir: example/public
