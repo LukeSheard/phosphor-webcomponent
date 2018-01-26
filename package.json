@@ -4,6 +4,7 @@
   "description": "Phosphor Layout customElements to use in the browser",
   "main": "index.js",
   "module": "es/index.js",
+  "style": "phosphor-layout.css",
   "typings": "es/index.d.ts",
   "scripts": {
     "prebuild": "rimraf cjs es phosphor-layout.css phosphor-layout.js phosphor-layout.min.js",
