@@ -1,0 +1,275 @@
+/*  
+  Phosphor Core
+*/
+.p-DockPanel,
+.p-DockPanel-widget {
+  z-index: 0; }
+
+.p-DockPanel-widget {
+  border: 2px solid #848589;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px; }
+
+.p-DockPanel-tabBar {
+  z-index: 1; }
+
+.p-DockPanel-handle {
+  z-index: 2; }
+  .p-DockPanel-handle.p-mod-hidden {
+    display: none !important; }
+  .p-DockPanel-handle:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: ""; }
+  .p-DockPanel-handle[data-orientation="horizontal"] {
+    cursor: ew-resize; }
+  .p-DockPanel-handle[data-orientation="vertical"] {
+    cursor: ns-resize; }
+  .p-DockPanel-handle[data-orientation="horizontal"]:after {
+    left: 50%;
+    min-width: 8px;
+    transform: translateX(-50%); }
+  .p-DockPanel-handle[data-orientation="vertical"]:after {
+    top: 50%;
+    min-height: 8px;
+    transform: translateY(-50%); }
+
+.p-DockPanel-overlay {
+  z-index: 3;
+  box-sizing: border-box;
+  pointer-events: none; }
+  .p-DockPanel-overlay.p-mod-hidden {
+    display: none !important; }
+
+.p-DockPanel {
+  position: relative;
+  display: block; }
+
+.p-DockPanel-overlay {
+  background: rgba(184, 203, 190, 0.4);
+  border: 1px dashed #848589; }
+  .p-DockPanel-overlay .p-mod-root-top,
+  .p-DockPanel-overlay .p-mod-root-left,
+  .p-DockPanel-overlay .p-mod-root-right,
+  .p-DockPanel-overlay .p-mod-root-bottom,
+  .p-DockPanel-overlay .p-mod-root-center {
+    border-width: 2px; }
+
+.p-DockTabPanel {
+  padding-right: 2px;
+  padding-bottom: 2px; }
+  .p-DockTabPanel > .p-StackedPanel {
+    padding: 10px;
+    background: #d5e1d0;
+    border: 1px solid #848589;
+    border-top: none; }
+
+.p-DockPanel-tabBar .p-TabBar-tab {
+  cursor: move; }
+
+/*-----------------------------------------------------------------------------
+| Copyright (c) 2014-2017, PhosphorJS Contributors
+|
+| Distributed under the terms of the BSD 3-Clause License.
+|
+| The full license is in the file LICENSE, distributed with this software.
+|----------------------------------------------------------------------------*/
+.p-SplitPanel-child {
+  z-index: 0; }
+
+.p-SplitPanel-handle {
+  z-index: 1; }
+  .p-SplitPanel-handle.p-mod-hidden {
+    display: none !important; }
+  .p-SplitPanel-handle:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: ''; }
+
+.p-SplitPanel[data-orientation='horizontal'] > .p-SplitPanel-handle {
+  cursor: ew-resize; }
+
+.p-SplitPanel[data-orientation='vertical'] > .p-SplitPanel-handle {
+  cursor: ns-resize; }
+
+.p-SplitPanel[data-orientation='horizontal'] > .p-SplitPanel-handle:after {
+  left: 50%;
+  min-width: 8px;
+  transform: translateX(-50%); }
+
+.p-SplitPanel[data-orientation='vertical'] > .p-SplitPanel-handle:after {
+  top: 50%;
+  min-height: 8px;
+  transform: translateY(-50%); }
+
+.p-TabPanel {
+  position: relative;
+  display: block; }
+
+.p-TabPanel-tabBar {
+  z-index: 1; }
+
+.p-TabPanel-stackedPanel {
+  z-index: 0; }
+
+.p-StackedPanel-child {
+  border: 2px solid #848589;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px; }
+
+.p-TabBar {
+  display: flex;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+  .p-TabBar[data-orientation="horizontal"] {
+    flex-direction: row; }
+  .p-TabBar[data-orientation="vertical"] {
+    flex-direction: column; }
+
+.p-TabBar-content {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex: 1 1 auto;
+  list-style-type: none; }
+
+.p-TabBar[data-orientation="horizontal"] > .p-TabBar-content {
+  flex-direction: row; }
+
+.p-TabBar[data-orientation="vertical"] > .p-TabBar-content {
+  flex-direction: column; }
+
+.p-TabBar-tab {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  overflow: hidden; }
+
+.p-TabBar-tabIcon,
+.p-TabBar-tabCloseIcon {
+  flex: 0 0 auto; }
+
+.p-TabBar-tabLabel {
+  flex: 1 1 auto;
+  overflow: hidden;
+  white-space: nowrap; }
+
+.p-TabBar-tab.p-mod-hidden {
+  display: none !important; }
+
+.p-TabBar.p-mod-dragging .p-TabBar-tab {
+  position: relative; }
+
+.p-TabBar.p-mod-dragging[data-orientation="horizontal"] .p-TabBar-tab {
+  left: 0;
+  transition: left 150ms ease; }
+
+.p-TabBar.p-mod-dragging[data-orientation="vertical"] .p-TabBar-tab {
+  top: 0;
+  transition: top 150ms ease; }
+
+.p-TabBar.p-mod-dragging .p-TabBar-tab.p-mod-dragging {
+  transition: none; }
+
+.p-TabBar {
+  min-height: 30px;
+  max-height: 30px; }
+  .p-TabBar .p-mod-closable .p-TabBar-tabCloseIcon {
+    margin-left: 4px;
+    line-height: 28px; }
+    .p-TabBar .p-mod-closable .p-TabBar-tabCloseIcon:before {
+      content: "\f00d";
+      font-family: FontAwesome;
+      font-size: 14px; }
+    .p-TabBar .p-mod-closable .p-TabBar-tabCloseIcon:hover {
+      cursor: pointer; }
+
+.p-TabBar-tab {
+  flex: 0 1 125px;
+  min-height: 25px;
+  max-height: 25px;
+  min-width: 35px;
+  border: 1px solid #848589;
+  border-bottom: none;
+  padding: 0px 10px;
+  background: #d5e1d0;
+  font-size: 12px;
+  cursor: pointer; }
+  .p-TabBar-tab:first-child {
+    margin-left: 0; }
+  .p-TabBar-tab:hover {
+    background: #8dc88b; }
+  .p-TabBar-tab.p-mod-current {
+    min-height: 27px;
+    max-height: 27px;
+    background: #8dc88b; }
+    .p-TabBar-tab.p-mod-current:hover {
+      background: #8dc88b; }
+  .p-TabBar-tab .p-mod-drag-image {
+    min-height: 28px;
+    max-height: 28px;
+    min-width: 125px;
+    border: none;
+    transform: translateX(-40%) translateY(-58%); }
+  .p-TabBar-tab .p-TabBar-tabLabel {
+    line-height: 26px; }
+
+.p-TabBar-tabIcon,
+.p-TabBar-tabText {
+  line-height: 20px; }
+
+.p-TabBar-content {
+  min-width: 0;
+  align-items: flex-end; }
+
+.p-Widget {
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  cursor: default; }
+  .p-Widget.p-mod-hidden {
+    display: none !important; }
+
+/*
+  Provided Theme 
+*/
+phosphor-widget {
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  align-content: stretch;
+  align-items: stretch; }
+
+phosphor-widget,
+phosphor-dock-layout,
+phosphor-split-layout,
+phosphor-tab-layout {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-content: stretch;
+  align-items: stretch; }
+
+.p-StackedPanel,
+.p-SplitPanel,
+.p-TabPanel,
+.p-DockPanel {
+  flex: 1;
+  position: relative;
+  display: block; }

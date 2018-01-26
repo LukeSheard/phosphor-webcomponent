@@ -1,1 +1,8 @@
 src
+coverage
+karma.config.js
+.travis.yml
+tsconfig.build.json
+tsconfig.json
+tslint.json
+webpack.config.ts
