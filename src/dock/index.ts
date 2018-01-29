@@ -140,5 +140,3 @@ export class HTMLPhosphorDockElement extends HTMLPhosphorElement<DockPanel> {
     return sortedWidgets.concat(remainingWidgets);
   }
 }
-
-customElements.define(HTMLPhosphorDockElement.is, HTMLPhosphorDockElement);

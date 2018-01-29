@@ -77,5 +77,3 @@ export class HTMLPhosphorTabElement extends HTMLPhosphorElement<TabPanel> {
     this._layout.currentWidget = widget;
   }
 }
-
-customElements.define(HTMLPhosphorTabElement.is, HTMLPhosphorTabElement);
