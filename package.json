@@ -9,7 +9,7 @@
   "scripts": {
     "prebuild": "rimraf cjs es phosphor-layout.css phosphor-layout.js phosphor-layout.min.js",
     "build": "npm-run-all --parallel build:*",
-    "build:style": "node-sass style/phosphot-layout.scss --output .",
+    "build:style": "node-sass style/phosphor-layout.scss --output .",
     "build:tsc": "tsc --project tsconfig.build.json",
     "build:webpack": "webpack",
     "lint": "tslint --project tsconfig.json",

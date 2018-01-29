@@ -1,7 +1,9 @@
-src
 coverage
-karma.config.js
+src
+style
+.gitignore
 .travis.yml
+karma.conf.js
 tsconfig.build.json
 tsconfig.json
 tslint.json

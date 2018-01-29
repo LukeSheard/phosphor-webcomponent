@@ -29,32 +29,38 @@ const BASE_CONFIG: webpack.Configuration = {
   }
 };
 
-const CJS_CONFIG = (prod: boolean) =>
-  ({
+const createConfig = (prod: boolean, output: webpack.Output) => {
+  const config = {
     ...BASE_CONFIG,
-    output: {
-      ...BASE_CONFIG.output,
-      filename: `cjs/${FILENAME}${prod ? ".min" : ""}.js`,
-      libraryTarget: "commonjs"
-    }
-  } as webpack.Configuration);
+    output
+  } as webpack.Configuration;
+
+  if (prod) {
+    config.plugins = [new webpack.optimize.UglifyJsPlugin()];
+  }
+
+  return config;
+};
+
+const CJS_CONFIG = (prod: boolean) =>
+  createConfig(prod, {
+    filename: `cjs/${FILENAME}${prod ? ".min" : ""}.js`,
+    libraryTarget: "commonjs"
+  });
 
 const UMD_CONFIG = (prod: boolean) =>
-  ({
-    ...BASE_CONFIG,
-    output: {
-      ...BASE_CONFIG.output,
-      filename: `${FILENAME}${prod ? ".min" : ""}.js`,
-      library: LIBRARY_NAME,
-      libraryTarget: "umd"
-    }
-  } as webpack.Configuration);
+  createConfig(prod, {
+    ...BASE_CONFIG.output,
+    filename: `${FILENAME}${prod ? ".min" : ""}.js`,
+    library: LIBRARY_NAME,
+    libraryTarget: "umd"
+  });
 
 const ENVIRONMENT_CONFIGS = [CJS_CONFIG, UMD_CONFIG];
 
 export default ENVIRONMENTS.reduce(
   (configs, environment) => {
-    const environmentConfigs = ENVIRONMENT_CONFIGS.map(c => c(environment));
+    const environmentConfigs = ENVIRONMENT_CONFIGS.map(createEnvConfig => createEnvConfig(environment));
     return configs.concat(environmentConfigs);
   },
   [] as webpack.Configuration[]
